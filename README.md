@@ -17,7 +17,7 @@ and deployed on [Netlify](https://www.netlify.com).
 
 ## Local development
 
-You need [Node.js](https://nodejs.org) 20 or newer installed.
+You need [Node.js](https://nodejs.org) 22.12 or newer installed (required by Astro 6).
 
 ```bash
 npm install      # install dependencies (first time only)

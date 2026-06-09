@@ -9,8 +9,8 @@
   publish = "dist"
 
 [build.environment]
-  # Pin the Node.js version so local and Netlify builds match.
-  NODE_VERSION = "20"
+  # Pin the Node.js version. Astro 6 requires Node >= 22.12.
+  NODE_VERSION = "22"
 
 # Redirect the bare domain to the French homepage. This mirrors the redirect
 # in astro.config.mjs so it also works for direct hits at the edge.
