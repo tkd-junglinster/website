@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+/* Club theme tokens. These generate Tailwind utilities such as
+   `bg-brand-red`, `text-brand-black`, `border-brand-red`, etc.
+   Club colours: traditional taekwondo red, white and black. */
+@theme {
+  --color-brand-red: #c8102e;
+  --color-brand-red-dark: #9c0c23;
+  --color-brand-black: #141414;
+  --color-brand-white: #ffffff;
+
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+}

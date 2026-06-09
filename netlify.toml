@@ -1,0 +1,21 @@
+# Netlify deployment configuration for the TKD Junglinster website.
+# Netlify reads this file automatically on every deploy — no dashboard
+# clicking required for the build settings below.
+
+[build]
+  # Command Netlify runs to produce the site.
+  command = "npm run build"
+  # Folder Astro writes the finished static site into.
+  publish = "dist"
+
+[build.environment]
+  # Pin the Node.js version so local and Netlify builds match.
+  NODE_VERSION = "20"
+
+# Redirect the bare domain to the French homepage. This mirrors the redirect
+# in astro.config.mjs so it also works for direct hits at the edge.
+[[redirects]]
+  from = "/"
+  to = "/fr/"
+  status = 302
+  force = false
