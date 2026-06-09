@@ -27,11 +27,16 @@ You never have to touch a server. The flow is always:
 
 Everything is owned by the **club organisation**, not any individual:
 
-| Service | Account | What it's for |
+| Service | Account / location | What it's for |
 | --- | --- | --- |
-| GitHub | `tkd-junglinster` organisation | Stores all the website files |
-| Netlify | Club Netlify account | Publishes the site, manages the domain |
+| GitHub | [github.com/tkd-junglinster/website](https://github.com/tkd-junglinster/website) | Stores all the website files |
+| Netlify | `richard@tkd-junglinster.lu` | Publishes the site, manages the domain |
 | Domain | `tkd-junglinster.lu` registrar | The web address |
+
+**Current live preview:** the site is published at
+**https://tkd-junglinster.netlify.app** while it is being built. The real domain
+`tkd-junglinster.lu` still points at the old WordPress site and will only be
+switched over once the new site is finished and approved.
 
 **Important:** keep the logins for these in the club's shared password manager so
 they survive committee changes. Never store passwords or keys inside the website
