@@ -1,0 +1,11 @@
+{
+  "type": "grading",
+  "status": "confirmed",
+  "sortDate": "2026-12-13",
+  "country": "LU",
+  "heroImage": "/images/events/belt-grading.jpg",
+  "featured": false,
+  "links": [
+    { "label": "Club information", "url": "https://tkd-junglinster.lu" }
+  ]
+}

@@ -1,0 +1,87 @@
+---
+import { getLangFromUrl, useTranslations, localePath } from '../i18n/utils';
+import type { EventStatus } from '../lib/events';
+
+interface Props {
+  /** The object returned by getEventDetail (includes the rendered Content). */
+  event: Awaited<ReturnType<typeof import('../lib/events').getEventDetail>>;
+}
+
+const { event } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+// `event` is non-null here — the page guards against null before rendering.
+const e = event!;
+const Content = e.Content;
+
+const statusClass: Record<EventStatus, string> = {
+  'save-the-date': 'bg-brand-black text-white',
+  provisional: 'bg-amber-500 text-white',
+  confirmed: 'bg-green-600 text-white',
+  'registration-open': 'bg-brand-red text-white',
+};
+---
+
+<article>
+  {
+    e.heroImage && (
+      <div class="relative">
+        <img src={e.heroImage} alt="" class="h-64 w-full object-cover md:h-96" />
+        <div class="absolute inset-0 bg-gradient-to-t from-brand-black/85 via-brand-black/40 to-transparent" />
+        <div class="absolute inset-x-0 bottom-0">
+          <div class="mx-auto max-w-3xl px-4 pb-6">
+            <h1 class="text-3xl font-extrabold text-white md:text-4xl">{e.title}</h1>
+          </div>
+        </div>
+      </div>
+    )
+  }
+
+  <div class="mx-auto max-w-3xl px-4 py-10">
+    <a
+      href={localePath(lang, 'events')}
+      class="text-sm font-medium text-brand-red hover:underline"
+    >
+      {t('event.back')}
+    </a>
+
+    {!e.heroImage && <h1 class="mt-4 text-3xl font-extrabold md:text-4xl">{e.title}</h1>}
+
+    <div class="mt-4 flex flex-wrap items-center gap-2">
+      <span
+        class:list={['rounded px-2 py-0.5 text-xs font-semibold', statusClass[e.status]]}
+      >
+        {t(`event.status.${e.status}`)}
+      </span>
+      <span class="rounded bg-brand-black/5 px-2 py-0.5 text-xs font-medium text-brand-black/70">
+        {t(`event.type.${e.type}`)}
+      </span>
+    </div>
+    <p class="mt-3 text-lg font-semibold text-brand-red">{e.dateDisplay}</p>
+
+    <div class="event-body mt-6 text-brand-black/90">
+      <Content />
+    </div>
+
+    {
+      e.links.length > 0 && (
+        <div class="mt-10 border-t border-brand-black/10 pt-6">
+          <h2 class="text-lg font-bold">{t('event.links')}</h2>
+          <div class="mt-3 flex flex-wrap gap-3">
+            {e.links.map((l) => (
+              <a
+                href={l.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="rounded-md bg-brand-red px-5 py-2 text-sm font-semibold text-white transition-colors hover:bg-brand-red-dark"
+              >
+                {l.label}
+              </a>
+            ))}
+          </div>
+        </div>
+      )
+    }
+  </div>
+</article>

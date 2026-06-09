@@ -102,16 +102,42 @@ are added:
 - **About** — club history, coaches, what is taekwondo
 - **Join us** — age groups, fees, Spond sign-up, medical info, T&Cs
 - **Training** — timetable, venues with maps, season status
-- **Competitions** — automatically updated calendar (see below)
+- **Competitions** ✅ (built) — automatically updated calendar (see below)
+- **Events** ✅ (built) — the club's own annual calendar (camps, gradings, ...)
 - **News & gallery** — simple posts with a photo and text
 
-### Competitions calendar (planned)
+### Competitions calendar (display built; automation planned)
 
-A small automated job will run once a week, look up upcoming competitions in
-Luxembourg, Belgium, France and Germany, and put them into a Google Sheet. A
-club manager reviews the list and ticks the ones to show. Approved events then
-appear on the Competitions page. Full instructions will be added here once it's
-built.
+The **Competitions** page already shows upcoming competitions, each linking to
+its registration page on martial.events. For now the list is kept in the file
+`src/data/competitions.json`. The planned automation will run a job once a week
+to look up new competitions in Luxembourg, Belgium, France and Germany, put them
+in a Google Sheet for a manager to approve, and refresh that file automatically.
+Full instructions will be added here once that automation is built.
+
+### Events calendar — how to add or edit an event
+
+The **Events** page is the club's own promotional calendar. Each event is a
+folder under `src/content/events/`. To add an event, copy an existing folder
+(for example `summer-camp-denmark-2027`) and edit the files inside:
+
+- **`meta.json`** — the facts (edited once, shared by all languages):
+  - `type`: `camp`, `competition`, `grading`, `social` or `other`
+  - `status`: `save-the-date`, `provisional`, `confirmed` or `registration-open`
+    (this controls the coloured badge — update it as plans firm up)
+  - `sortDate`: a date `YYYY-MM-DD` used only to put events in order; use an
+    approximate date if the real one isn't known yet
+  - `heroImage`: a photo placed in `public/images/events/` (optional)
+  - `featured`: `true` to highlight it with a "Don't miss" flag
+  - `links`: buttons shown on the event page, e.g.
+    `[{ "label": "Application form", "url": "https://..." }]`
+- **`en.md`, `fr.md`, `de.md`** — the words, one file per language. The part at
+  the top (`title`, `summary`, `dateDisplay`) shows on the card; the text below
+  it is the full description shown on the event's own page. `dateDisplay` is
+  free text, so "Early July 2027 (dates to be confirmed)" is fine.
+
+To remove an event, delete its folder. There is a worked example you can safely
+delete: `src/content/events/club-belt-grading-2026/`.
 
 ---
 

@@ -1,0 +1,95 @@
+---
+import { getLangFromUrl, useTranslations, localePath } from '../i18n/utils';
+import { getEventCards, type EventStatus } from '../lib/events';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const events = await getEventCards(lang);
+
+const statusClass: Record<EventStatus, string> = {
+  'save-the-date': 'bg-brand-black text-white',
+  provisional: 'bg-amber-500 text-white',
+  confirmed: 'bg-green-600 text-white',
+  'registration-open': 'bg-brand-red text-white',
+};
+
+// Group events by calendar year.
+type Group = { year: string; items: typeof events };
+const groups: Group[] = [];
+for (const e of events) {
+  const year = e.sortDate.slice(0, 4);
+  const last = groups.at(-1);
+  if (last && last.year === year) last.items.push(e);
+  else groups.push({ year, items: [e] });
+}
+---
+
+<section class="mx-auto max-w-6xl px-4 py-16">
+  <h1 class="border-l-4 border-brand-red pl-4 text-3xl font-bold md:text-4xl">
+    {t('nav.events')}
+  </h1>
+  <p class="mt-6 max-w-2xl text-lg text-brand-black/80">{t('events.intro')}</p>
+
+  {
+    events.length === 0 ? (
+      <p class="mt-12 rounded-md bg-brand-black/5 p-8 text-center text-brand-black/70">
+        {t('events.empty')}
+      </p>
+    ) : (
+      <div class="mt-10 space-y-12">
+        {groups.map((group) => (
+          <div>
+            <h2 class="mb-5 text-xl font-bold text-brand-black/40">{group.year}</h2>
+            <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {group.items.map((e) => (
+                <a
+                  href={localePath(lang, `events/${e.slug}`)}
+                  class:list={[
+                    'group flex flex-col overflow-hidden rounded-lg border bg-white shadow-sm transition-shadow hover:shadow-lg',
+                    e.featured ? 'border-brand-red' : 'border-brand-black/10',
+                  ]}
+                >
+                  {e.heroImage && (
+                    <div class="relative aspect-[16/9] overflow-hidden">
+                      <img
+                        src={e.heroImage}
+                        alt=""
+                        class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                      />
+                      {e.featured && (
+                        <span class="absolute left-3 top-3 rounded bg-brand-red px-2 py-1 text-xs font-bold uppercase tracking-wide text-white">
+                          {t('event.featured')}
+                        </span>
+                      )}
+                    </div>
+                  )}
+                  <div class="flex flex-1 flex-col p-4">
+                    <div class="mb-2 flex flex-wrap items-center gap-2">
+                      <span
+                        class:list={[
+                          'rounded px-2 py-0.5 text-xs font-semibold',
+                          statusClass[e.status],
+                        ]}
+                      >
+                        {t(`event.status.${e.status}`)}
+                      </span>
+                      <span class="rounded bg-brand-black/5 px-2 py-0.5 text-xs font-medium text-brand-black/70">
+                        {t(`event.type.${e.type}`)}
+                      </span>
+                    </div>
+                    <h3 class="text-lg font-bold text-brand-black">{e.title}</h3>
+                    <p class="mt-1 text-sm font-medium text-brand-red">{e.dateDisplay}</p>
+                    <p class="mt-2 flex-1 text-sm text-brand-black/70">{e.summary}</p>
+                    <span class="mt-4 text-sm font-semibold text-brand-black group-hover:text-brand-red">
+                      {t('event.learnMore')} →
+                    </span>
+                  </div>
+                </a>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    )
+  }
+</section>
