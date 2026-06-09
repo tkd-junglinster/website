@@ -1,0 +1,124 @@
+[
+  {
+    "id": "open-espoirs-93-combat-cdt-93-edition-2026",
+    "name": "Open Espoirs 93 combat CDT 93 – Edition 2026",
+    "country": "FR",
+    "city": "Tremblay-en-France",
+    "start": "2026-06-13",
+    "url": "https://martial.events/en/events/open-espoirs-93-combat-cdt-93-edition-2026",
+    "approved": true
+  },
+  {
+    "id": "open-international-d-orleans-2026",
+    "name": "Open International d'Orléans",
+    "country": "FR",
+    "city": "Orléans",
+    "start": "2026-06-13",
+    "url": "https://martial.events/en/events/open-international-d-orleans-2026",
+    "approved": true
+  },
+  {
+    "id": "open-elites-93-combat-cdt-93-edition-2026",
+    "name": "Open Elites 93 combat CDT 93 – Edition 2026",
+    "country": "FR",
+    "city": "Tremblay-en-France",
+    "start": "2026-06-14",
+    "url": "https://martial.events/en/events/open-elites-93-combat-cdt-93-edition-2026",
+    "approved": true
+  },
+  {
+    "id": "rising-camp-summer-edition-2026",
+    "name": "Rising Camp Summer Edition 2026",
+    "country": "BE",
+    "city": "Brussels",
+    "start": "2026-06-27",
+    "end": "2026-06-28",
+    "url": "https://martial.events/en/events/rising-camp-summer-edition-2026",
+    "approved": true
+  },
+  {
+    "id": "sonbae-olympic-camp-2026",
+    "name": "Sonbae Olympic Camp",
+    "country": "BE",
+    "city": "Aquennes",
+    "start": "2026-06-27",
+    "url": "https://martial.events/en/events/sonbae-olympic-camp-2026",
+    "approved": true
+  },
+  {
+    "id": "poomsae-lab-2026-france",
+    "name": "Poomsae Lab 2026 France",
+    "country": "FR",
+    "city": "Andrézieux-Bouthéon",
+    "start": "2026-07-24",
+    "end": "2026-07-27",
+    "url": "https://martial.events/en/events/poomsae-lab-2026-france",
+    "approved": true
+  },
+  {
+    "id": "tkl-kids-open-2026",
+    "name": "TKL Kids Open 2026",
+    "country": "BE",
+    "city": "Léglise",
+    "start": "2026-09-20",
+    "url": "https://martial.events/en/events/tkl-kids-open-2026",
+    "approved": true
+  },
+  {
+    "id": "ilyo-open-poomsae-2026",
+    "name": "Ilyo Open Poomsae & Kyorugi 2026",
+    "country": "BE",
+    "city": "Aarschot",
+    "start": "2026-09-26",
+    "end": "2026-09-27",
+    "url": "https://martial.events/en/events/ilyo-open-poomsae-2026",
+    "approved": true
+  },
+  {
+    "id": "open-wallonie-bruxelles-poomsae-2026",
+    "name": "Open Wallonie-Bruxelles Poomsae & Kyorugi 2026",
+    "country": "BE",
+    "city": "Brussels",
+    "start": "2026-10-10",
+    "end": "2026-10-11",
+    "url": "https://martial.events/en/events/open-wallonie-bruxelles-poomsae-2026",
+    "approved": true
+  },
+  {
+    "id": "kwan-open-kyorugi-2026",
+    "name": "Kwan Open Kyorugi 2026",
+    "country": "BE",
+    "city": "Brussels",
+    "start": "2026-10-17",
+    "url": "https://martial.events/en/events/kwan-open-kyorugi-2026",
+    "approved": true
+  },
+  {
+    "id": "international-ans-trophy-2026",
+    "name": "International Ans Trophy 2026",
+    "country": "BE",
+    "city": "Ans",
+    "start": "2026-10-25",
+    "url": "https://martial.events/en/events/international-ans-trophy-2026",
+    "approved": true
+  },
+  {
+    "id": "international-kids-cup-kyorugi-2026",
+    "name": "International Kid's Cup - Kyorugi",
+    "country": "BE",
+    "city": "Anderlecht",
+    "start": "2026-11-15",
+    "url": "https://martial.events/en/events/international-kids-cup-kyorugi-2026",
+    "approved": true
+  },
+  {
+    "id": "indoor-brussels-kyorugi-2026",
+    "name": "Indoor Brussels Kyorugi & Poomsae 2026",
+    "country": "BE",
+    "city": "Brussels",
+    "start": "2026-11-28",
+    "end": "2026-11-29",
+    "url": "https://martial.events/en/events/indoor-brussels-kyorugi-2026",
+    "approved": true
+  }
+]

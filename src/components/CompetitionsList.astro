@@ -1,0 +1,81 @@
+---
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import { getUpcomingCompetitions, parseLocalDate } from '../lib/competitions';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const localeTag = ({ fr: 'fr-FR', en: 'en-GB', de: 'de-DE' } as const)[lang];
+const monthFmt = new Intl.DateTimeFormat(localeTag, { month: 'long', year: 'numeric' });
+const dayFmt = new Intl.DateTimeFormat(localeTag, { day: 'numeric', month: 'short' });
+
+const competitions = getUpcomingCompetitions();
+
+// Group competitions by calendar month for a calendar-like layout.
+type Group = { label: string; items: typeof competitions };
+const groups: Group[] = [];
+for (const c of competitions) {
+  const label = monthFmt.format(parseLocalDate(c.start));
+  const last = groups.at(-1);
+  if (last && last.label === label) last.items.push(c);
+  else groups.push({ label, items: [c] });
+}
+
+function dateBadge(c: (typeof competitions)[number]): string {
+  const start = dayFmt.format(parseLocalDate(c.start));
+  if (!c.end || c.end === c.start) return start;
+  return `${start} – ${dayFmt.format(parseLocalDate(c.end))}`;
+}
+---
+
+<section class="mx-auto max-w-4xl px-4 py-16">
+  <h1 class="border-l-4 border-brand-red pl-4 text-3xl font-bold md:text-4xl">
+    {t('nav.competitions')}
+  </h1>
+  <p class="mt-6 max-w-2xl text-lg text-brand-black/80">{t('comp.intro')}</p>
+  <p class="mt-2 max-w-2xl text-sm text-brand-black/60">{t('comp.note')}</p>
+
+  {
+    competitions.length === 0 ? (
+      <p class="mt-12 rounded-md bg-brand-black/5 p-8 text-center text-brand-black/70">
+        {t('comp.empty')}
+      </p>
+    ) : (
+      <div class="mt-10 space-y-10">
+        {groups.map((group) => (
+          <div>
+            <h2 class="mb-4 text-lg font-semibold capitalize text-brand-red">
+              {group.label}
+            </h2>
+            <ul class="space-y-3">
+              {group.items.map((c) => (
+                <li class="flex flex-col gap-3 rounded-lg border border-brand-black/10 bg-white p-4 shadow-sm transition-shadow hover:shadow-md sm:flex-row sm:items-center">
+                  <div class="flex w-full shrink-0 items-center justify-center rounded-md bg-brand-black px-3 py-2 text-center text-sm font-semibold text-white sm:w-28">
+                    {dateBadge(c)}
+                  </div>
+                  <div class="flex-1">
+                    <p class="font-semibold text-brand-black">{c.name}</p>
+                    <p class="mt-0.5 text-sm text-brand-black/60">
+                      {c.city} ·{' '}
+                      <span class="font-medium">{t(`comp.country.${c.country}`)}</span>
+                    </p>
+                  </div>
+                  <a
+                    href={c.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="shrink-0 rounded-md bg-brand-red px-5 py-2 text-center text-sm font-semibold text-white transition-colors hover:bg-brand-red-dark"
+                  >
+                    {t('comp.register')}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    )
+  }
+
+  <p class="mt-12 text-xs text-brand-black/50">{t('comp.source')}</p>
+</section>

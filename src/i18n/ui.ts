@@ -46,6 +46,19 @@ export const ui = {
 
     'page.comingSoon': 'Cette page sera bientôt disponible.',
 
+    'comp.intro':
+      'Les compétitions à venir au Luxembourg et dans les pays voisins (Belgique, France, Allemagne). Cliquez sur une compétition pour vous inscrire.',
+    'comp.note':
+      "Vérifiez toujours les détails et les délais d'inscription sur la page de l'événement.",
+    'comp.source':
+      'Calendrier mis à jour automatiquement chaque semaine depuis martial.events.',
+    'comp.register': "S'inscrire",
+    'comp.empty': 'Aucune compétition à venir pour le moment. Revenez bientôt !',
+    'comp.country.LU': 'Luxembourg',
+    'comp.country.BE': 'Belgique',
+    'comp.country.FR': 'France',
+    'comp.country.DE': 'Allemagne',
+
     'footer.tagline': 'Club de Taekwondo à Junglinster, Luxembourg',
     'footer.rights': 'Tous droits réservés.',
   },
@@ -77,6 +90,19 @@ export const ui = {
 
     'page.comingSoon': 'This page is coming soon.',
 
+    'comp.intro':
+      'Upcoming competitions in Luxembourg and neighbouring countries (Belgium, France, Germany). Click a competition to register.',
+    'comp.note':
+      'Always check the details and registration deadlines on the event page.',
+    'comp.source':
+      'Calendar updated automatically each week from martial.events.',
+    'comp.register': 'Register',
+    'comp.empty': 'No upcoming competitions right now. Check back soon!',
+    'comp.country.LU': 'Luxembourg',
+    'comp.country.BE': 'Belgium',
+    'comp.country.FR': 'France',
+    'comp.country.DE': 'Germany',
+
     'footer.tagline': 'Taekwondo club in Junglinster, Luxembourg',
     'footer.rights': 'All rights reserved.',
   },
@@ -107,6 +133,20 @@ export const ui = {
     'home.fact.3': 'Traditionelles Taekwondo',
 
     'page.comingSoon': 'Diese Seite ist bald verfügbar.',
+
+    'comp.intro':
+      'Bevorstehende Wettkämpfe in Luxemburg und den Nachbarländern (Belgien, Frankreich, Deutschland). Klicken Sie auf einen Wettkampf, um sich anzumelden.',
+    'comp.note':
+      'Bitte prüfen Sie die Details und Anmeldefristen immer auf der Veranstaltungsseite.',
+    'comp.source':
+      'Kalender wird wöchentlich automatisch von martial.events aktualisiert.',
+    'comp.register': 'Anmelden',
+    'comp.empty':
+      'Derzeit keine bevorstehenden Wettkämpfe. Schauen Sie bald wieder vorbei!',
+    'comp.country.LU': 'Luxemburg',
+    'comp.country.BE': 'Belgien',
+    'comp.country.FR': 'Frankreich',
+    'comp.country.DE': 'Deutschland',
 
     'footer.tagline': 'Taekwondo-Verein in Junglinster, Luxemburg',
     'footer.rights': 'Alle Rechte vorbehalten.',
