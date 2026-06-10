@@ -24,6 +24,12 @@ pnpm-debug.log*
 # Claude Code local tooling (not part of the website)
 .claude/
 
+# Raw source material drop-zone (originals of flyers etc.). The site uses the
+# staged copies under public/ — keep the originals local only.
+# Leading slash anchors this to the repo root ONLY (Git is case-insensitive on
+# Windows, so an unanchored "Events/" would also match src/content/events/).
+/Events/
+
 # OS / editor cruft
 .DS_Store
 Thumbs.db

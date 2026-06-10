@@ -11,9 +11,9 @@ export async function getStaticPaths() {
 
 const { slug } = Astro.params;
 const lang = getLangFromUrl(Astro.url);
-if (!slug) return Astro.redirect(localePath(lang, 'events'));
+if (!slug) return Astro.redirect(localePath(lang, 'calendar'));
 const event = await getEventDetail(slug, lang);
-if (!event) return Astro.redirect(localePath(lang, 'events'));
+if (!event) return Astro.redirect(localePath(lang, 'calendar'));
 ---
 
 <BaseLayout title={event.title} description={event.summary}>

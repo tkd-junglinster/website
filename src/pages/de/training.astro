@@ -1,5 +1,12 @@
 ---
-import PagePlaceholder from '../../components/PagePlaceholder.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import TrainingContent from '../../components/TrainingContent.astro';
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
-<PagePlaceholder titleKey="nav.training" />
+<BaseLayout title={t('nav.training')}>
+  <TrainingContent />
+</BaseLayout>

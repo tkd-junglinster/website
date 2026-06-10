@@ -1,0 +1,89 @@
+---
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import { content, links } from '../i18n/content';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const c = content[lang].join;
+---
+
+<section class="mx-auto max-w-6xl px-4 py-16">
+  <h1 class="border-l-4 border-brand-red pl-4 text-3xl font-bold md:text-4xl">
+    {t('nav.join')}
+  </h1>
+  <p class="mt-6 max-w-2xl text-lg text-brand-black/80">{c.intro}</p>
+
+  <!-- How to sign up -->
+  <div class="mt-12 rounded-lg border border-brand-black/10 bg-brand-black/[0.03] p-6 md:p-8">
+    <h2 class="text-xl font-bold md:text-2xl">{c.signupTitle}</h2>
+    <p class="mt-3 max-w-2xl text-brand-black/80">{c.signupBody}</p>
+    <a
+      href={links.spond}
+      target="_blank"
+      rel="noopener"
+      class="mt-5 inline-block rounded-md bg-brand-red px-8 py-3 font-semibold text-white transition-colors hover:bg-brand-red-dark"
+    >
+      {c.signupButton}
+    </a>
+  </div>
+
+  <!-- Fees -->
+  <div class="mt-12">
+    <h2 class="border-l-4 border-brand-red pl-4 text-xl font-bold md:text-2xl">
+      {c.feesTitle}
+    </h2>
+    <div class="mt-5 max-w-xl overflow-hidden rounded-lg border border-brand-black/10">
+      <table class="w-full text-left">
+        <tbody>
+          {
+            c.fees.map((fee, i) => (
+              <tr class:list={[i % 2 === 1 && 'bg-brand-black/[0.03]']}>
+                <td class="px-4 py-3 text-brand-black/80">{fee.label}</td>
+                <td class="px-4 py-3 text-right font-semibold whitespace-nowrap">
+                  {fee.amount}
+                </td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </div>
+    <p class="mt-3 text-sm text-brand-black/60">{c.feesNote}</p>
+  </div>
+
+  <!-- Medical + Age -->
+  <div class="mt-12 grid gap-8 md:grid-cols-2">
+    <div>
+      <h2 class="border-l-4 border-brand-red pl-4 text-xl font-bold md:text-2xl">
+        {c.medicalTitle}
+      </h2>
+      <p class="mt-4 text-brand-black/80">{c.medicalBody}</p>
+      <a
+        href={links.medical}
+        target="_blank"
+        rel="noopener"
+        class="mt-3 inline-block font-semibold text-brand-red hover:underline"
+      >
+        {c.medicalLink} →
+      </a>
+    </div>
+    <div>
+      <h2 class="border-l-4 border-brand-red pl-4 text-xl font-bold md:text-2xl">
+        {c.ageTitle}
+      </h2>
+      <p class="mt-4 text-brand-black/80">{c.ageBody}</p>
+    </div>
+  </div>
+
+  <!-- Contact + liability -->
+  <div class="mt-12 border-t border-brand-black/10 pt-8">
+    <h2 class="text-xl font-bold md:text-2xl">{c.contactTitle}</h2>
+    <p class="mt-3 text-brand-black/80">
+      {c.contactBody}{' '}
+      <a href={`mailto:${links.email}`} class="font-semibold text-brand-red hover:underline">
+        {links.email}
+      </a>.
+    </p>
+    <p class="mt-6 text-sm italic text-brand-black/50">{c.liability}</p>
+  </div>
+</section>

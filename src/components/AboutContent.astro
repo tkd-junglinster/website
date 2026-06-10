@@ -1,0 +1,46 @@
+---
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import { content } from '../i18n/content';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const c = content[lang].about;
+---
+
+<section class="mx-auto max-w-6xl px-4 py-16">
+  <h1 class="border-l-4 border-brand-red pl-4 text-3xl font-bold md:text-4xl">
+    {t('nav.about')}
+  </h1>
+  <p class="mt-6 max-w-3xl text-lg text-brand-black/80">{c.intro}</p>
+
+  <!-- Five virtues -->
+  <h2 class="mt-12 border-l-4 border-brand-red pl-4 text-xl font-bold md:text-2xl">
+    {c.virtuesTitle}
+  </h2>
+  <div class="mt-5 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+    {
+      c.virtues.map((v) => (
+        <div class="rounded-lg border-t-4 border-brand-red bg-white p-5 shadow-sm">
+          <p class="text-lg font-bold">{v.name}</p>
+          <p class="mt-1 text-sm text-brand-black/70">{v.desc}</p>
+        </div>
+      ))
+    }
+  </div>
+
+  <!-- Dojang etiquette -->
+  <h2 class="mt-12 border-l-4 border-brand-red pl-4 text-xl font-bold md:text-2xl">
+    {c.rulesTitle}
+  </h2>
+  <p class="mt-4 max-w-2xl text-brand-black/80">{c.rulesIntro}</p>
+  <ul class="mt-5 max-w-2xl space-y-3">
+    {
+      c.rules.map((rule) => (
+        <li class="flex gap-3">
+          <span class="mt-2 inline-block h-2 w-2 shrink-0 bg-brand-red" aria-hidden="true" />
+          <span class="text-brand-black/80">{rule}</span>
+        </li>
+      ))
+    }
+  </ul>
+</section>

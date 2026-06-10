@@ -1,0 +1,12 @@
+{
+  "type": "social",
+  "status": "confirmed",
+  "sortDate": "2025-05-17",
+  "location": "Centre Sportif Op Fréinen, Junglinster",
+  "country": "LU",
+  "heroImage": "/images/events/lenster-wibbelt-2025.webp",
+  "featured": false,
+  "links": [
+    { "label": "Event details (junglinster.lu)", "url": "https://www.junglinster.lu/agenda/eventdetail/2025-05-17/lenster-wibbelt" }
+  ]
+}

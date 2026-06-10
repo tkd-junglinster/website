@@ -13,20 +13,23 @@ const statusClass: Record<EventStatus, string> = {
   'registration-open': 'bg-brand-red text-white',
 };
 
-// Group events by calendar year.
-type Group = { year: string; items: typeof events };
+// Group events by calendar month, so the page reads as a year overview
+// ("May", "September", "November", …) with the events that happen in each.
+const monthFmt = new Intl.DateTimeFormat(lang, { month: 'long', year: 'numeric' });
+const cap = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
+type Group = { key: string; label: string; items: typeof events };
 const groups: Group[] = [];
 for (const e of events) {
-  const year = e.sortDate.slice(0, 4);
+  const key = e.sortDate.slice(0, 7); // YYYY-MM
   const last = groups.at(-1);
-  if (last && last.year === year) last.items.push(e);
-  else groups.push({ year, items: [e] });
+  if (last && last.key === key) last.items.push(e);
+  else groups.push({ key, label: cap(monthFmt.format(new Date(`${key}-01T00:00:00`))), items: [e] });
 }
 ---
 
 <section class="mx-auto max-w-6xl px-4 py-16">
   <h1 class="border-l-4 border-brand-red pl-4 text-3xl font-bold md:text-4xl">
-    {t('nav.events')}
+    {t('nav.calendar')}
   </h1>
   <p class="mt-6 max-w-2xl text-lg text-brand-black/80">{t('events.intro')}</p>
 
@@ -39,11 +42,14 @@ for (const e of events) {
       <div class="mt-10 space-y-12">
         {groups.map((group) => (
           <div>
-            <h2 class="mb-5 text-xl font-bold text-brand-black/40">{group.year}</h2>
+            <h2 class="mb-5 flex items-center gap-3 text-xl font-bold text-brand-black/40">
+              <span class="inline-block h-4 w-1.5 bg-brand-red" aria-hidden="true" />
+              {group.label}
+            </h2>
             <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {group.items.map((e) => (
                 <a
-                  href={localePath(lang, `events/${e.slug}`)}
+                  href={localePath(lang, `calendar/${e.slug}`)}
                   class:list={[
                     'group flex flex-col overflow-hidden rounded-lg border bg-white shadow-sm transition-shadow hover:shadow-lg',
                     e.featured ? 'border-brand-red' : 'border-brand-black/10',
@@ -79,6 +85,9 @@ for (const e of events) {
                     </div>
                     <h3 class="text-lg font-bold text-brand-black">{e.title}</h3>
                     <p class="mt-1 text-sm font-medium text-brand-red">{e.dateDisplay}</p>
+                    {e.location && (
+                      <p class="text-sm text-brand-black/60">{e.location}</p>
+                    )}
                     <p class="mt-2 flex-1 text-sm text-brand-black/70">{e.summary}</p>
                     <span class="mt-4 text-sm font-semibold text-brand-black group-hover:text-brand-red">
                       {t('event.learnMore')} →

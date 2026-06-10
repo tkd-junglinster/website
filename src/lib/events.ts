@@ -13,6 +13,7 @@ export interface EventCard {
   type: EventType;
   status: EventStatus;
   sortDate: string;
+  location?: string;
   country?: 'LU' | 'BE' | 'FR' | 'DE' | 'OTHER';
   heroImage?: string;
   featured: boolean;

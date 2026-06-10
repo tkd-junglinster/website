@@ -1,0 +1,83 @@
+---
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import { content } from '../i18n/content';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const c = content[lang].training;
+---
+
+<section class="mx-auto max-w-6xl px-4 py-16">
+  <h1 class="border-l-4 border-brand-red pl-4 text-3xl font-bold md:text-4xl">
+    {t('nav.training')}
+  </h1>
+  <p class="mt-6 max-w-2xl text-lg text-brand-black/80">{c.intro}</p>
+
+  <!-- Groups -->
+  <h2 class="mt-12 border-l-4 border-brand-red pl-4 text-xl font-bold md:text-2xl">
+    {c.groupsTitle}
+  </h2>
+  <div class="mt-5 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+    {
+      c.groups.map((g) => (
+        <div class="rounded-lg border border-brand-black/10 bg-white p-5 shadow-sm">
+          <p class="text-lg font-bold text-brand-red">{g.name}</p>
+          <p class="mt-1 text-sm text-brand-black/70">{g.desc}</p>
+        </div>
+      ))
+    }
+  </div>
+
+  <!-- Timetable -->
+  <h2 class="mt-12 border-l-4 border-brand-red pl-4 text-xl font-bold md:text-2xl">
+    {c.timetableTitle}
+  </h2>
+  <div class="mt-5 overflow-x-auto rounded-lg border border-brand-black/10">
+    <table class="w-full min-w-[36rem] text-left">
+      <thead class="bg-brand-black text-white">
+        <tr>
+          <th class="px-4 py-3 font-semibold">{c.colDay}</th>
+          <th class="px-4 py-3 font-semibold">{c.colVenue}</th>
+          <th class="px-4 py-3 font-semibold">{c.colSessions}</th>
+        </tr>
+      </thead>
+      <tbody>
+        {
+          c.timetable.map((row, i) => (
+            <tr class:list={['border-t border-brand-black/10', i % 2 === 1 && 'bg-brand-black/[0.03]']}>
+              <td class="px-4 py-3 font-medium whitespace-nowrap">{row.day}</td>
+              <td class="px-4 py-3 whitespace-nowrap text-brand-black/80">{row.venue}</td>
+              <td class="px-4 py-3 text-brand-black/80">{row.sessions}</td>
+            </tr>
+          ))
+        }
+      </tbody>
+    </table>
+  </div>
+  <p class="mt-3 text-sm text-brand-black/60">{c.timetableNote}</p>
+
+  <!-- Venues -->
+  <h2 class="mt-12 border-l-4 border-brand-red pl-4 text-xl font-bold md:text-2xl">
+    {c.venuesTitle}
+  </h2>
+  <div class="mt-5 grid gap-5 sm:grid-cols-2">
+    {
+      c.venues.map((v) => (
+        <div class="rounded-lg border border-brand-black/10 bg-white p-5 shadow-sm">
+          <p class="text-lg font-bold">{v.name}</p>
+          <p class="mt-1 text-sm text-brand-black/70">{v.desc}</p>
+          {v.map && (
+            <a
+              href={v.map}
+              target="_blank"
+              rel="noopener"
+              class="mt-3 inline-block text-sm font-semibold text-brand-red hover:underline"
+            >
+              {c.mapLabel} →
+            </a>
+          )}
+        </div>
+      ))
+    }
+  </div>
+</section>

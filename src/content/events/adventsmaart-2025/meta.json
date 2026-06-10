@@ -1,0 +1,12 @@
+{
+  "type": "social",
+  "status": "confirmed",
+  "sortDate": "2025-11-29",
+  "location": "Plaaz virum Centre Culturel, Junglinster",
+  "country": "LU",
+  "featured": false,
+  "links": [
+    { "label": "Flyer (PDF)", "url": "/files/adventsmaart-2025-flyer.pdf" },
+    { "label": "Event details (junglinster.lu)", "url": "https://www.junglinster.lu/agenda/eventdetail/2025-11-29/adventsmaart-zu-jonglenster-2025-1259612137" }
+  ]
+}

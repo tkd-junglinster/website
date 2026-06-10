@@ -26,6 +26,9 @@ const eventMeta = defineCollection({
     // ISO date used ONLY for ordering — never shown. Use the real date if known,
     // otherwise an approximate one (e.g. 2027-07-01 for "early July 2027").
     sortDate: z.string(),
+    // Where the event takes place, e.g. "Op Fréinen" — shown on the calendar
+    // card and the detail page. Optional.
+    location: z.string().optional(),
     country: z.enum(['LU', 'BE', 'FR', 'DE', 'OTHER']).optional(),
     // Path to an image in /public, e.g. "/images/events/summer-camp.jpg".
     heroImage: z.string().optional(),

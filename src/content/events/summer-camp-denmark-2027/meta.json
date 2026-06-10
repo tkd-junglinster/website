@@ -2,8 +2,11 @@
   "type": "camp",
   "status": "save-the-date",
   "sortDate": "2027-07-01",
+  "location": "Denmark",
   "country": "OTHER",
   "heroImage": "/images/events/summer-camp-denmark.jpg",
   "featured": true,
-  "links": []
+  "links": [
+    { "label": "Summer camp website (taekwondo.dk)", "url": "https://www.taekwondo.dk/summercamp/" }
+  ]
 }

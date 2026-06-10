@@ -6,16 +6,16 @@
 //     en (English), de (German).
 //   - Keep the keys identical across all three languages.
 //
-// French is the default language. If a key is missing in en/de, the French
+// English is the default language. If a key is missing in fr/de, the English
 // text is shown as a fallback.
 
 export const languages = {
-  fr: 'Français',
   en: 'English',
+  fr: 'Français',
   de: 'Deutsch',
 } as const;
 
-export const defaultLang = 'fr';
+export const defaultLang = 'en';
 
 export const ui = {
   fr: {
@@ -29,7 +29,7 @@ export const ui = {
     'nav.join': 'Nous rejoindre',
     'nav.training': 'Entraînement',
     'nav.competitions': 'Compétitions',
-    'nav.events': 'Événements',
+    'nav.calendar': 'Calendrier',
     'nav.news': 'Actualités',
 
     'home.hero.title': 'Bienvenue au TKD Junglinster',
@@ -39,7 +39,7 @@ export const ui = {
     'home.cta.band': 'Prêt à commencer le Taekwondo ?',
     'home.welcome.title': 'Notre club',
     'home.welcome.body':
-      'Le TKD Junglinster accueille les enfants et les adultes de tous niveaux dans une atmosphère conviviale et professionnelle. (Texte de présentation à finaliser.)',
+      'Le TKD Junglinster est un club de Taekwondo convivial à Junglinster, ouvert aux enfants et aux adultes de tous niveaux. Le Taekwondo développe la discipline, le respect et la confiance en soi — et c’est très amusant. Venez vous entraîner avec nous.',
     'home.facts.title': 'En bref',
     'home.fact.1': 'Cours pour enfants et adultes',
     'home.fact.2': "Deux lieux d'entraînement",
@@ -61,7 +61,7 @@ export const ui = {
     'comp.country.DE': 'Allemagne',
 
     'events.intro':
-      'Les temps forts de la saison : stages, passages de grade, compétitions et événements du club. Cliquez sur un événement pour en savoir plus.',
+      'Le calendrier de la saison : les rendez-vous auxquels nous attendons nos membres — stages, passages de grade, événements du club et fêtes locales. Cliquez sur un événement pour en savoir plus.',
     'events.empty': 'Aucun événement programmé pour le moment. Revenez bientôt !',
     'event.learnMore': 'En savoir plus',
     'event.back': '← Tous les événements',
@@ -91,7 +91,7 @@ export const ui = {
     'nav.join': 'Join us',
     'nav.training': 'Training',
     'nav.competitions': 'Competitions',
-    'nav.events': 'Events',
+    'nav.calendar': 'Calendar',
     'nav.news': 'News & gallery',
 
     'home.hero.title': 'Welcome to TKD Junglinster',
@@ -101,7 +101,7 @@ export const ui = {
     'home.cta.band': 'Ready to start Taekwondo?',
     'home.welcome.title': 'Our club',
     'home.welcome.body':
-      'TKD Junglinster welcomes children and adults of all levels in a friendly and professional atmosphere. (Welcome text to be finalised.)',
+      'TKD Junglinster is a friendly Taekwondo club in Junglinster, welcoming children and adults of all levels. Taekwondo builds discipline, respect and confidence — and it’s a lot of fun. Come and train with us.',
     'home.facts.title': 'At a glance',
     'home.fact.1': 'Classes for children and adults',
     'home.fact.2': 'Two training venues',
@@ -123,7 +123,7 @@ export const ui = {
     'comp.country.DE': 'Germany',
 
     'events.intro':
-      'The highlights of the season: camps, gradings, competitions and club events. Click an event to find out more.',
+      'The season at a glance — the dates we hope to see our members at: camps, gradings, club events and local festivals. Click an event to find out more.',
     'events.empty': 'No events scheduled yet. Check back soon!',
     'event.learnMore': 'Learn more',
     'event.back': '← All events',
@@ -153,7 +153,7 @@ export const ui = {
     'nav.join': 'Mitmachen',
     'nav.training': 'Training',
     'nav.competitions': 'Wettkämpfe',
-    'nav.events': 'Veranstaltungen',
+    'nav.calendar': 'Kalender',
     'nav.news': 'Aktuelles',
 
     'home.hero.title': 'Willkommen beim TKD Junglinster',
@@ -163,7 +163,7 @@ export const ui = {
     'home.cta.band': 'Bereit, mit Taekwondo zu starten?',
     'home.welcome.title': 'Unser Verein',
     'home.welcome.body':
-      'Der TKD Junglinster heißt Kinder und Erwachsene aller Niveaus in freundlicher und professioneller Atmosphäre willkommen. (Begrüßungstext wird noch finalisiert.)',
+      'Der TKD Junglinster ist ein freundlicher Taekwondo-Verein in Junglinster, der Kinder und Erwachsene aller Niveaus willkommen heißt. Taekwondo fördert Disziplin, Respekt und Selbstvertrauen — und macht großen Spaß. Trainieren Sie mit uns.',
     'home.facts.title': 'Auf einen Blick',
     'home.fact.1': 'Kurse für Kinder und Erwachsene',
     'home.fact.2': 'Zwei Trainingsorte',
@@ -186,7 +186,7 @@ export const ui = {
     'comp.country.DE': 'Deutschland',
 
     'events.intro':
-      'Die Höhepunkte der Saison: Trainingslager, Gürtelprüfungen, Wettkämpfe und Vereinsveranstaltungen. Klicken Sie auf eine Veranstaltung, um mehr zu erfahren.',
+      'Die Saison auf einen Blick — die Termine, zu denen wir unsere Mitglieder erwarten: Trainingslager, Gürtelprüfungen, Vereinsveranstaltungen und lokale Feste. Klicken Sie auf eine Veranstaltung, um mehr zu erfahren.',
     'events.empty': 'Noch keine Veranstaltungen geplant. Schauen Sie bald wieder vorbei!',
     'event.learnMore': 'Mehr erfahren',
     'event.back': '← Alle Veranstaltungen',

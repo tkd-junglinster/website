@@ -6,20 +6,22 @@ export default defineConfig({
   // Public URL of the live site. Update if the domain changes.
   site: 'https://tkd-junglinster.lu',
 
-  // Multilingual routing. French is the default language; English and German
+  // Multilingual routing. English is the default language; French and German
   // are also available. Every language is served under its own URL prefix:
-  //   /fr/  /en/  /de/
+  //   /en/  /fr/  /de/
   i18n: {
-    locales: ['fr', 'en', 'de'],
-    defaultLocale: 'fr',
+    locales: ['en', 'fr', 'de'],
+    defaultLocale: 'en',
     routing: {
       prefixDefaultLocale: true,
-      redirectToDefaultLocale: true,
+      // The bare root (/) is redirected to /en/ via the `redirects` map below,
+      // so we don't also let Astro auto-redirect it (avoids a route conflict).
+      redirectToDefaultLocale: false,
     },
   },
 
-  // Visiting the bare root sends the visitor to the French homepage.
+  // Visiting the bare root sends the visitor to the English homepage.
   redirects: {
-    '/': '/fr/',
+    '/': '/en/',
   },
 });
