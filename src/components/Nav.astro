@@ -8,12 +8,13 @@ const t = useTranslations(lang);
 
 const links: { key: UiKey; path: string }[] = [
   { key: 'nav.home', path: '' },
-  { key: 'nav.about', path: 'about' },
   { key: 'nav.join', path: 'join' },
   { key: 'nav.training', path: 'training' },
-  { key: 'nav.competitions', path: 'competitions' },
   { key: 'nav.calendar', path: 'calendar' },
-  { key: 'nav.news', path: 'news' },
+  { key: 'nav.competitions', path: 'competitions' },
+  { key: 'nav.about', path: 'about' },
+  // News & gallery is hidden from the nav for now (hard to keep current).
+  // The /news pages still exist; re-add the line above to show it again.
 ];
 
 const current = Astro.url.pathname.replace(/\/$/, '');
