@@ -1,7 +1,7 @@
 {
   "type": "social",
-  "status": "confirmed",
   "sortDate": "2025-11-29",
+  "tentative": false,
   "location": "Plaaz virum Centre Culturel, Junglinster",
   "country": "LU",
   "featured": false,

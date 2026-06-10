@@ -99,12 +99,15 @@ The following parts of the site are planned and will be documented here as they
 are added:
 
 - **Home** ✅ (built)
-- **About** — club history, coaches, what is taekwondo
-- **Join us** — age groups, fees, Spond sign-up, medical info, T&Cs
-- **Training** — timetable, venues with maps, season status
+- **Join us** ✅ (built) — fees, free trials, Spond sign-up, medical info, min age
+- **Training** ✅ (built) — groups, weekly timetable, venues with maps
+- **Calendar** ✅ (built) — the club's own annual calendar (camps, gradings,
+  local festivals); renamed from "Events", lives at `/calendar/`
 - **Competitions** ✅ (built) — automatically updated calendar (see below)
-- **Events** ✅ (built) — the club's own annual calendar (camps, gradings, ...)
-- **News & gallery** — simple posts with a photo and text
+- **About** ✅ (built) — what taekwondo is, the five virtues, dojang etiquette
+  (still to add: coach names/grades)
+- **News & gallery** — simple posts with a photo and text (hidden from the nav
+  for now; the `/news` pages exist but aren't linked)
 
 ### Competitions calendar (display built; automation planned)
 
@@ -115,18 +118,21 @@ to look up new competitions in Luxembourg, Belgium, France and Germany, put them
 in a Google Sheet for a manager to approve, and refresh that file automatically.
 Full instructions will be added here once that automation is built.
 
-### Events calendar — how to add or edit an event
+### Calendar — how to add or edit an event
 
-The **Events** page is the club's own promotional calendar. Each event is a
-folder under `src/content/events/`. To add an event, copy an existing folder
-(for example `summer-camp-denmark-2027`) and edit the files inside:
+The **Calendar** page (at `/calendar/`) is the club's own promotional calendar.
+Each event is a folder under `src/content/events/`. To add an event, copy an
+existing folder (for example `summer-camp-denmark-2026`) and edit the files
+inside:
 
 - **`meta.json`** — the facts (edited once, shared by all languages):
   - `type`: `camp`, `competition`, `grading`, `social` or `other`
-  - `status`: `save-the-date`, `provisional`, `confirmed` or `registration-open`
-    (this controls the coloured badge — update it as plans firm up)
+    (shown as a small grey label on the card)
   - `sortDate`: a date `YYYY-MM-DD` used only to put events in order; use an
     approximate date if the real one isn't known yet
+  - `tentative`: `true` if the date isn't fixed yet (shows an amber
+    "Tentative date" badge); `false` or omit once the date is confirmed
+  - `location`: where it happens, e.g. `"Op Fréinen"` (optional)
   - `heroImage`: a photo placed in `public/images/events/` (optional)
   - `featured`: `true` to highlight it with a "Don't miss" flag
   - `links`: buttons shown on the event page, e.g.

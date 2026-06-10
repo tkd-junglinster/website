@@ -1,7 +1,7 @@
 {
   "type": "grading",
-  "status": "confirmed",
   "sortDate": "2026-12-13",
+  "tentative": true,
   "country": "LU",
   "heroImage": "/images/events/belt-grading.jpg",
   "featured": false,

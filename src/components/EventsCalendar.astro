@@ -1,17 +1,10 @@
 ---
 import { getLangFromUrl, useTranslations, localePath } from '../i18n/utils';
-import { getEventCards, type EventStatus } from '../lib/events';
+import { getEventCards } from '../lib/events';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 const events = await getEventCards(lang);
-
-const statusClass: Record<EventStatus, string> = {
-  'save-the-date': 'bg-brand-black text-white',
-  provisional: 'bg-amber-500 text-white',
-  confirmed: 'bg-green-600 text-white',
-  'registration-open': 'bg-brand-red text-white',
-};
 
 // Group events by calendar month, so the page reads as a year overview
 // ("May", "September", "November", …) with the events that happen in each.
@@ -71,17 +64,14 @@ for (const e of events) {
                   )}
                   <div class="flex flex-1 flex-col p-4">
                     <div class="mb-2 flex flex-wrap items-center gap-2">
-                      <span
-                        class:list={[
-                          'rounded px-2 py-0.5 text-xs font-semibold',
-                          statusClass[e.status],
-                        ]}
-                      >
-                        {t(`event.status.${e.status}`)}
-                      </span>
                       <span class="rounded bg-brand-black/5 px-2 py-0.5 text-xs font-medium text-brand-black/70">
                         {t(`event.type.${e.type}`)}
                       </span>
+                      {e.tentative && (
+                        <span class="rounded bg-amber-500 px-2 py-0.5 text-xs font-semibold text-white">
+                          {t('event.tentative')}
+                        </span>
+                      )}
                     </div>
                     <h3 class="text-lg font-bold text-brand-black">{e.title}</h3>
                     <p class="mt-1 text-sm font-medium text-brand-red">{e.dateDisplay}</p>

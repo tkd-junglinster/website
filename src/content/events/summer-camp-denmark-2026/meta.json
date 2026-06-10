@@ -1,7 +1,7 @@
 {
   "type": "camp",
-  "status": "confirmed",
   "sortDate": "2026-07-05",
+  "tentative": false,
   "location": "Veldtofte Hallerne, Esbjerg, Denmark",
   "country": "OTHER",
   "heroImage": "/images/events/summer-camp-denmark.jpg",

@@ -1,7 +1,7 @@
 {
   "type": "social",
-  "status": "confirmed",
   "sortDate": "2025-09-19",
+  "tentative": false,
   "location": "Centre Culturel Am Duerf, Junglinster",
   "country": "LU",
   "featured": false,

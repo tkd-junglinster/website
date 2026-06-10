@@ -1,17 +1,13 @@
 import { getCollection, getEntry, render } from 'astro:content';
 import type { Lang } from '../i18n/ui';
 
-export type EventStatus =
-  | 'save-the-date'
-  | 'provisional'
-  | 'confirmed'
-  | 'registration-open';
 export type EventType = 'camp' | 'competition' | 'grading' | 'social' | 'other';
 
 export interface EventCard {
   slug: string;
   type: EventType;
-  status: EventStatus;
+  /** True when the date is not yet fixed (shows a "Tentative date" badge). */
+  tentative: boolean;
   sortDate: string;
   location?: string;
   country?: 'LU' | 'BE' | 'FR' | 'DE' | 'OTHER';

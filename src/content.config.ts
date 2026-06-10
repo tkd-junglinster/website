@@ -10,22 +10,19 @@ import { glob } from 'astro/loaders';
 //   de.md       — German version
 //
 // Splitting "facts" (meta.json) from "words" (the .md files) means the date or
-// status is edited in ONE place, while the promo text is written naturally in
+// type is edited in ONE place, while the promo text is written naturally in
 // each language. See HANDOVER.md for a copy-paste template.
 
 const eventMeta = defineCollection({
   loader: glob({ pattern: '*/meta.json', base: './src/content/events' }),
   schema: z.object({
     type: z.enum(['camp', 'competition', 'grading', 'social', 'other']),
-    status: z.enum([
-      'save-the-date',
-      'provisional',
-      'confirmed',
-      'registration-open',
-    ]),
     // ISO date used ONLY for ordering — never shown. Use the real date if known,
     // otherwise an approximate one (e.g. 2027-07-01 for "early July 2027").
     sortDate: z.string(),
+    // Set to true when the date is not yet fixed — the card then shows a
+    // "Tentative date" badge. Leave false/omit once the date is confirmed.
+    tentative: z.boolean().default(false),
     // Where the event takes place, e.g. "Op Fréinen" — shown on the calendar
     // card and the detail page. Optional.
     location: z.string().optional(),
