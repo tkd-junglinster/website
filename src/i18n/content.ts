@@ -149,12 +149,14 @@ export const content: Record<Lang, PageContent> = {
         {
           day: 'Tuesday',
           venue: 'Op Freinen',
-          sessions: '17:00–18:00 · 18:00–19:00 · 19:00–20:00 · 19:00–21:00',
+          sessions:
+            'Tigeren 17:00–18:00 · Kobraen 18:00–19:00 · Draachen 19:00–20:00 · Draachen extra 19:00–21:00',
         },
         {
           day: 'Thursday',
           venue: 'Op Freinen',
-          sessions: '17:00–18:00 · 18:00–19:00 · 19:00–20:00 · 19:00–21:00',
+          sessions:
+            'Tigeren 17:00–18:00 · Kobraen 18:00–19:00 · Draachen 19:00–20:00 · Draachen extra 19:00–21:00',
         },
         {
           day: 'Saturday',
@@ -163,7 +165,7 @@ export const content: Record<Lang, PageContent> = {
         },
       ],
       timetableNote:
-        "Session times by group are confirmed at the start of each season — please check with us for your group's exact slot.",
+        'Saturday morning is for competitors. New to the club? Your first three sessions are free — come along and find your group.',
       venuesTitle: 'Where we train',
       venues: [
         {
@@ -260,12 +262,14 @@ export const content: Record<Lang, PageContent> = {
         {
           day: 'Mardi',
           venue: 'Op Freinen',
-          sessions: '17:00–18:00 · 18:00–19:00 · 19:00–20:00 · 19:00–21:00',
+          sessions:
+            'Tigeren 17:00–18:00 · Kobraen 18:00–19:00 · Draachen 19:00–20:00 · Draachen extra 19:00–21:00',
         },
         {
           day: 'Jeudi',
           venue: 'Op Freinen',
-          sessions: '17:00–18:00 · 18:00–19:00 · 19:00–20:00 · 19:00–21:00',
+          sessions:
+            'Tigeren 17:00–18:00 · Kobraen 18:00–19:00 · Draachen 19:00–20:00 · Draachen extra 19:00–21:00',
         },
         {
           day: 'Samedi',
@@ -274,7 +278,7 @@ export const content: Record<Lang, PageContent> = {
         },
       ],
       timetableNote:
-        'Les horaires par groupe sont confirmés en début de saison — n’hésitez pas à nous contacter pour le créneau exact de votre groupe.',
+        'Le samedi matin est réservé aux compétiteurs. Nouveau au club ? Vos trois premières séances sont gratuites — venez trouver votre groupe.',
       venuesTitle: 'Où nous nous entraînons',
       venues: [
         {
@@ -371,12 +375,14 @@ export const content: Record<Lang, PageContent> = {
         {
           day: 'Dienstag',
           venue: 'Op Freinen',
-          sessions: '17:00–18:00 · 18:00–19:00 · 19:00–20:00 · 19:00–21:00',
+          sessions:
+            'Tigeren 17:00–18:00 · Kobraen 18:00–19:00 · Draachen 19:00–20:00 · Draachen extra 19:00–21:00',
         },
         {
           day: 'Donnerstag',
           venue: 'Op Freinen',
-          sessions: '17:00–18:00 · 18:00–19:00 · 19:00–20:00 · 19:00–21:00',
+          sessions:
+            'Tigeren 17:00–18:00 · Kobraen 18:00–19:00 · Draachen 19:00–20:00 · Draachen extra 19:00–21:00',
         },
         {
           day: 'Samstag',
@@ -385,7 +391,7 @@ export const content: Record<Lang, PageContent> = {
         },
       ],
       timetableNote:
-        'Die Trainingszeiten pro Gruppe werden zu Saisonbeginn bestätigt — bitte fragen Sie uns nach dem genauen Zeitfenster Ihrer Gruppe.',
+        'Samstagvormittag ist für Wettkämpfer. Neu im Verein? Ihre ersten drei Einheiten sind kostenlos — kommen Sie vorbei und finden Sie Ihre Gruppe.',
       venuesTitle: 'Wo wir trainieren',
       venues: [
         {
