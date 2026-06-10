@@ -1,13 +1,18 @@
 ---
-title: "Summer Camp Denmark 2027"
+title: "Summer Camp Denmark 2026"
 summary: "A week of training, friendship and fun at the big international taekwondo summer camp in Denmark — one of the highlights of our year."
-dateDisplay: "Early July 2027 (dates to be confirmed)"
+dateDisplay: "5–9 July 2026 (week 28)"
 ---
 
 Every summer, taekwondoists from across Europe come together in Denmark for a
 week of intensive training, new friendships and a lot of fun. It is one of the
 biggest events on our calendar and a fantastic experience for children, teenagers
 and adults alike.
+
+## When and where
+
+- **5–9 July 2026** (week 28)
+- **Veldtofte Hallerne**, Sportsvej 17–19, 6705 Esbjerg, Denmark
 
 ## What to expect
 
@@ -23,6 +28,7 @@ families or with club supervision — we will share full details closer to the t
 
 ## Next steps
 
-Dates and prices for July 2027 will be confirmed in the coming months. **Save the
-date for now**, and watch this page — we will add the full programme, travel
-information and the application form as soon as they are available.
+The official SummerCamp 2026 website is on its way, with the full programme,
+instructors and prices. **Save the date**, follow the camp's Facebook page for
+updates, and watch this page — we will add travel information and the application
+details as soon as they are available.
