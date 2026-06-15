@@ -84,6 +84,8 @@ interface PageContent {
   };
   about: {
     intro: string;
+    storyTitle: string;
+    story: string[];
     virtuesTitle: string;
     virtues: NamedItem[];
     rulesTitle: string;
@@ -180,6 +182,15 @@ export const content: Record<Lang, PageContent> = {
     about: {
       intro:
         'TKD Junglinster is a Taekwondo club in Junglinster, Luxembourg, welcoming children and adults of all levels. Taekwondo is more than a sport: it builds discipline, respect and self-confidence. These values guide everything we do in the dojang.',
+      storyTitle: 'Our story',
+      story: [
+        'The club was founded in Junglinster in April 2000 by a small group of enthusiastic athletes. What began as a modest experiment has grown into an established martial arts community, with members ranging from children aged 6 to adults, of all ages and levels.',
+        'Training takes place up to four days a week across multiple groups, structured to suit different ages and abilities. We primarily train in the “op Fréinen” sports hall in Junglinster, but also use Lënster Lycée.',
+        'Belt gradings are held twice a year, giving members a regular opportunity to demonstrate their progress.',
+        'Our programme is grounded in World Taekwondo and Kukkiwon tradition. Sessions cover technique, fitness, body control, and discipline, with regular work on self-defence, sparring, one-step sparring, and Poomsae.',
+        'Beyond training, the club organises social events and camps throughout the season. We take pride in the atmosphere we have built: one that is welcoming, serious about the art, and genuinely enjoyable to be part of.',
+        'We expect all members to conduct themselves with respect toward fellow athletes, coaches, and the spirit of the martial art. Anyone who fails to do so will not remain a member of the club.',
+      ],
       virtuesTitle: 'The five virtues',
       virtues: [
         { name: 'Perseverance', desc: 'Enduring physical and mental challenges and never giving up.' },
@@ -293,6 +304,15 @@ export const content: Record<Lang, PageContent> = {
     about: {
       intro:
         'Le TKD Junglinster est un club de Taekwondo à Junglinster, au Luxembourg, ouvert aux enfants et aux adultes de tous niveaux. Le Taekwondo est plus qu’un sport : il développe la discipline, le respect et la confiance en soi. Ces valeurs guident tout ce que nous faisons dans le dojang.',
+      storyTitle: 'Notre histoire',
+      story: [
+        'Le club a été fondé à Junglinster en avril 2000 par un petit groupe de sportifs passionnés. Ce qui a commencé comme une modeste expérience est devenu une communauté d’arts martiaux bien établie, avec des membres allant des enfants à partir de 6 ans jusqu’aux adultes, de tous âges et de tous niveaux.',
+        'Les entraînements ont lieu jusqu’à quatre jours par semaine, répartis en plusieurs groupes structurés selon l’âge et le niveau. Nous nous entraînons principalement dans la salle sportive « op Fréinen » à Junglinster, mais utilisons également le Lënster Lycée.',
+        'Les passages de ceinture ont lieu deux fois par an, offrant aux membres l’occasion de démontrer régulièrement leurs progrès.',
+        'Notre programme s’inscrit dans la tradition de World Taekwondo et du Kukkiwon. Les séances couvrent la technique, la condition physique, la maîtrise du corps et la discipline, avec un travail régulier sur la self-défense, le combat, le combat en un pas et le Poomsae.',
+        'Au-delà de l’entraînement, le club organise des événements sociaux et des stages tout au long de la saison. Nous sommes fiers de l’atmosphère que nous avons construite : un environnement accueillant, sérieux dans sa pratique des arts martiaux, et où il fait vraiment bon se retrouver.',
+        'Nous attendons de tous les membres qu’ils fassent preuve de respect envers leurs camarades, les entraîneurs et l’esprit de l’art martial. Toute personne ne respectant pas ces valeurs ne pourra pas rester membre du club.',
+      ],
       virtuesTitle: 'Les cinq vertus',
       virtues: [
         { name: 'Persévérance', desc: 'Endurer les défis physiques et mentaux et ne jamais abandonner.' },
@@ -406,6 +426,15 @@ export const content: Record<Lang, PageContent> = {
     about: {
       intro:
         'Der TKD Junglinster ist ein Taekwondo-Verein in Junglinster, Luxemburg, der Kinder und Erwachsene aller Niveaus willkommen heißt. Taekwondo ist mehr als ein Sport: Es fördert Disziplin, Respekt und Selbstvertrauen. Diese Werte leiten alles, was wir im Dojang tun.',
+      storyTitle: 'Unsere Geschichte',
+      story: [
+        'Der Verein wurde im April 2000 in Junglinster von einer kleinen Gruppe begeisterter Sportler gegründet. Was als bescheidenes Experiment begann, hat sich zu einer etablierten Kampfsportgemeinschaft entwickelt, mit Mitgliedern von Kindern ab 6 Jahren bis hin zu Erwachsenen aller Altersgruppen und Niveaus.',
+        'Das Training findet an bis zu vier Tagen pro Woche in mehreren Gruppen statt, die nach Alter und Können strukturiert sind. Wir trainieren hauptsächlich in der Sporthalle „op Fréinen“ in Junglinster, nutzen aber auch das Lënster Lycée.',
+        'Gürtelprüfungen werden zweimal jährlich abgehalten und geben den Mitgliedern regelmäßig die Möglichkeit, ihre Fortschritte unter Beweis zu stellen.',
+        'Unser Programm basiert auf der Tradition von World Taekwondo und Kukkiwon. Die Trainingseinheiten umfassen Technik, Kondition, Körperbeherrschung und Disziplin, mit regelmäßiger Arbeit an Selbstverteidigung, Kampf, Ein-Schritt-Kampf und Poomsae.',
+        'Neben dem Training organisiert der Verein während der Saison gesellschaftliche Veranstaltungen und Camps. Wir sind stolz auf die Atmosphäre, die wir aufgebaut haben: eine Gemeinschaft, die offen und herzlich ist, die Kampfkunst ernst nimmt und in der man wirklich gerne dabei ist.',
+        'Wir erwarten von allen Mitgliedern, dass sie ihren Mitsportlern, den Trainern und dem Geist der Kampfkunst gegenüber respektvoll auftreten. Wer dem nicht nachkommt, wird den Verein verlassen müssen.',
+      ],
       virtuesTitle: 'Die fünf Tugenden',
       virtues: [
         { name: 'Ausdauer', desc: 'Körperliche und geistige Herausforderungen meistern und niemals aufgeben.' },

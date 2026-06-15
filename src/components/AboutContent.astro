@@ -13,6 +13,14 @@ const c = content[lang].about;
   </h1>
   <p class="mt-6 max-w-3xl text-lg text-brand-black/80">{c.intro}</p>
 
+  <!-- Our story -->
+  <h2 class="mt-12 border-l-4 border-brand-red pl-4 text-xl font-bold md:text-2xl">
+    {c.storyTitle}
+  </h2>
+  <div class="mt-4 max-w-3xl space-y-4 text-brand-black/80">
+    {c.story.map((para) => <p>{para}</p>)}
+  </div>
+
   <!-- Five virtues -->
   <h2 class="mt-12 border-l-4 border-brand-red pl-4 text-xl font-bold md:text-2xl">
     {c.virtuesTitle}
