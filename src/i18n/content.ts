@@ -20,7 +20,7 @@ import type { Lang } from './ui';
 export const links = {
   spond:
     'https://club.spond.com/landing/signup/tkdjunglinster/form/D3056925915D4661BB24FCF3E448FBE3',
-  medical: 'https://sports.public.lu/fr/programs/medico-sportif/rendez-vous.html',
+  medical: 'https://sports.public.lu/fr/programs/medico-sportif.html',
   opFreinenMap: 'https://maps.app.goo.gl/58qX6RDSrLi1TZf38',
   email: 'info@tkd-junglinster.lu',
 } as const;
