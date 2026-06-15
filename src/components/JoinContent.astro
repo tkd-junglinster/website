@@ -1,6 +1,6 @@
 ---
 import { getLangFromUrl, useTranslations } from '../i18n/utils';
-import { content, links } from '../i18n/content';
+import { content, links, registrationOpen } from '../i18n/content';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -16,15 +16,28 @@ const c = content[lang].join;
   <!-- How to sign up -->
   <div class="mt-12 rounded-lg border border-brand-black/10 bg-brand-black/[0.03] p-6 md:p-8">
     <h2 class="text-xl font-bold md:text-2xl">{c.signupTitle}</h2>
-    <p class="mt-3 max-w-2xl text-brand-black/80">{c.signupBody}</p>
-    <a
-      href={links.spond}
-      target="_blank"
-      rel="noopener"
-      class="mt-5 inline-block rounded-md bg-brand-red px-8 py-3 font-semibold text-white transition-colors hover:bg-brand-red-dark"
-    >
-      {c.signupButton}
-    </a>
+    {
+      registrationOpen ? (
+        <>
+          <p class="mt-3 max-w-2xl text-brand-black/80">{c.signupBody}</p>
+          <a
+            href={links.spond}
+            target="_blank"
+            rel="noopener"
+            class="mt-5 inline-block rounded-md bg-brand-red px-8 py-3 font-semibold text-white transition-colors hover:bg-brand-red-dark"
+          >
+            {c.signupButton}
+          </a>
+        </>
+      ) : (
+        <p class="mt-3 max-w-2xl text-brand-black/80">
+          {c.signupClosed}{' '}
+          <a href={`mailto:${links.email}`} class="font-semibold text-brand-red hover:underline">
+            {links.email}
+          </a>
+        </p>
+      )
+    }
   </div>
 
   <!-- Fees -->

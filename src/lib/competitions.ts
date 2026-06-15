@@ -5,7 +5,8 @@ export interface Competition {
   id: string;
   name: string;
   country: 'LU' | 'BE' | 'FR' | 'DE';
-  city: string;
+  /** City/venue. Optional — some sources (e.g. the LTF calendar) don't list it. */
+  city?: string;
   /** Start date, ISO `YYYY-MM-DD`. */
   start: string;
   /** End date for multi-day events, ISO `YYYY-MM-DD`. Omitted for single-day. */

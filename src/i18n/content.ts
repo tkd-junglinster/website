@@ -22,12 +22,36 @@ export const links = {
     'https://club.spond.com/landing/signup/tkdjunglinster/form/D3056925915D4661BB24FCF3E448FBE3',
   medical: 'https://sports.public.lu/fr/programs/medico-sportif.html',
   opFreinenMap: 'https://maps.app.goo.gl/58qX6RDSrLi1TZf38',
+  lensterLyceeMap:
+    'https://www.google.com/maps/search/?api=1&query=L%C3%ABnster%20Lyc%C3%A9e%20Junglinster',
   email: 'info@tkd-junglinster.lu',
 } as const;
+
+/**
+ * Master switch for new-member sign-ups.
+ *
+ * Set to `true` when registration opens (around August) and back to `false`
+ * when the club is full again. This single flag controls every "Join us" /
+ * sign-up button across the site (home hero, home "Join the club" section, and
+ * the Join page). The friendly welcome text stays the same in both states.
+ */
+export const registrationOpen = false;
 
 interface Fee {
   label: string;
   amount: string;
+}
+interface Stat {
+  /** Short headline, e.g. "Since 2000" or "80+". */
+  stat: string;
+  /** Supporting line under the headline. */
+  label: string;
+}
+interface SeasonBlock {
+  title: string;
+  body: string;
+  /** Shown when registration is closed, in place of the sign-up button. */
+  closedNote: string;
 }
 interface NamedItem {
   name: string;
@@ -36,7 +60,8 @@ interface NamedItem {
 interface TimetableRow {
   day: string;
   venue: string;
-  sessions: string;
+  /** One entry per session, time first (e.g. "18:00–19:00 Poomsae"). */
+  sessions: string[];
 }
 interface Venue {
   name: string;
@@ -48,14 +73,16 @@ interface Venue {
 interface PageContent {
   home: {
     newsBanner: string;
-    trialTitle: string;
-    trialBody: string;
+    heroStatusClosed: string;
+    season: SeasonBlock;
+    facts: Stat[];
   };
   join: {
     intro: string;
     signupTitle: string;
     signupBody: string;
     signupButton: string;
+    signupClosed: string;
     feesTitle: string;
     fees: Fee[];
     feesNote: string;
@@ -77,7 +104,6 @@ interface PageContent {
     colVenue: string;
     colSessions: string;
     timetable: TimetableRow[];
-    timetableNote: string;
     venuesTitle: string;
     venues: Venue[];
     mapLabel: string;
@@ -99,17 +125,28 @@ export const content: Record<Lang, PageContent> = {
     home: {
       newsBanner:
         'All groups are full for the 2025/26 season. Registrations for the 2026/27 season open in August 2026.',
-      trialTitle: 'Try us out — 3 free sessions',
-      trialBody:
-        'Come to us, have fun, make new friends and get rid of your stress! Everyone gets 3 free training sessions to check out the club before signing up.',
+      heroStatusClosed: 'Sign-ups open in August',
+      season: {
+        title: 'Join the club',
+        body: 'We’re a friendly, established club and we welcome new members every year. Everyone who joins gets 3 free trial sessions to try us out. Sign-ups open in August and the new season starts in September.',
+        closedNote:
+          'Registrations for the 2026/27 season aren’t open yet — they open in August 2026. Get in touch any time and we’ll let you know when places are available:',
+      },
+      facts: [
+        { stat: 'Since 2000', label: '25+ years of Taekwondo in Junglinster' },
+        { stat: 'Licensed', label: 'Coaches licensed by the Luxembourg Taekwondo Federation' },
+        { stat: '80+', label: 'Members, from age 6 to adult' },
+      ],
     },
     join: {
       intro:
-        'New members are always welcome. Everyone gets 3 free training sessions to try the club before deciding to join.',
+        'Each year we welcome new members to the club. Sign-ups open in August and the new season starts in September. Everyone who joins gets 3 free trial sessions to try us out.',
       signupTitle: 'How to sign up',
       signupBody:
         'Registration is handled through SPOND. Create your account and complete the sign-up form using the button below.',
       signupButton: 'Sign up on SPOND',
+      signupClosed:
+        'Registrations for the 2026/27 season open in August 2026. Get in touch and we’ll let you know as soon as places are available:',
       feesTitle: 'Membership fees',
       fees: [
         { label: 'Annual membership', amount: '€320' },
@@ -136,7 +173,6 @@ export const content: Record<Lang, PageContent> = {
         { name: 'Tigeren', desc: 'Children, ages 6–8' },
         { name: 'Kobraen', desc: 'Children, ages 9–11' },
         { name: 'Draachen', desc: 'Teenagers, 12 and up' },
-        { name: 'Adults', desc: 'Adults, 15 and up' },
       ],
       timetableTitle: 'Weekly timetable',
       colDay: 'Day',
@@ -146,28 +182,32 @@ export const content: Record<Lang, PageContent> = {
         {
           day: 'Monday',
           venue: 'Lënster Lycée',
-          sessions: 'Poomsae 18:00–19:00 · Body Combat 19:00–20:00',
+          sessions: ['18:00–19:00 Poomsae', '19:00–20:00 Body Combat'],
         },
         {
           day: 'Tuesday',
           venue: 'Op Freinen',
-          sessions:
-            'Tigeren 17:00–18:00 · Kobraen 18:00–19:00 · Draachen 19:00–20:00 · Draachen extra 19:00–21:00',
+          sessions: [
+            '17:00–18:00 Tigeren',
+            '18:00–19:00 Kobraen',
+            '19:00–20:30 Draachen',
+          ],
         },
         {
           day: 'Thursday',
           venue: 'Op Freinen',
-          sessions:
-            'Tigeren 17:00–18:00 · Kobraen 18:00–19:00 · Draachen 19:00–20:00 · Draachen extra 19:00–21:00',
+          sessions: [
+            '17:00–18:00 Tigeren',
+            '18:00–19:00 Kobraen',
+            '19:00–20:30 Draachen',
+          ],
         },
         {
           day: 'Saturday',
           venue: 'Op Freinen',
-          sessions: '10:00–12:00 (competitors)',
+          sessions: ['10:00–12:00 Competitors'],
         },
       ],
-      timetableNote:
-        'Saturday morning is for competitors. New to the club? Your first three sessions are free — come along and find your group.',
       venuesTitle: 'Where we train',
       venues: [
         {
@@ -175,7 +215,11 @@ export const content: Record<Lang, PageContent> = {
           desc: 'Main training hall (Tuesday, Thursday, Saturday).',
           map: links.opFreinenMap,
         },
-        { name: 'Lënster Lycée', desc: 'Monday sessions.' },
+        {
+          name: 'Lënster Lycée',
+          desc: 'Monday sessions.',
+          map: links.lensterLyceeMap,
+        },
       ],
       mapLabel: 'Open in Google Maps',
     },
@@ -219,17 +263,28 @@ export const content: Record<Lang, PageContent> = {
     home: {
       newsBanner:
         'Tous les groupes sont complets pour la saison 2025/26. Les inscriptions pour la saison 2026/27 ouvriront en août 2026.',
-      trialTitle: 'Faites un essai — 3 séances gratuites',
-      trialBody:
-        'Venez chez nous, amusez-vous, faites de nouvelles rencontres et évacuez votre stress ! Chacun bénéficie de 3 séances d’entraînement gratuites pour découvrir le club avant de s’inscrire.',
+      heroStatusClosed: 'Inscriptions en août',
+      season: {
+        title: 'Rejoindre le club',
+        body: 'Nous sommes un club convivial et établi, et nous accueillons de nouveaux membres chaque année. Chaque nouveau membre bénéficie de 3 séances d’essai gratuites pour nous découvrir. Les inscriptions ouvrent en août et la nouvelle saison commence en septembre.',
+        closedNote:
+          'Les inscriptions pour la saison 2026/27 ne sont pas encore ouvertes — elles ouvriront en août 2026. Contactez-nous à tout moment et nous vous préviendrons dès que des places seront disponibles :',
+      },
+      facts: [
+        { stat: 'Depuis 2000', label: 'Plus de 25 ans de Taekwondo à Junglinster' },
+        { stat: 'Diplômés', label: 'Entraîneurs licenciés par la Luxembourg Taekwondo Federation' },
+        { stat: '80+', label: 'Membres, dès 6 ans et adultes' },
+      ],
     },
     join: {
       intro:
-        'Les nouveaux membres sont toujours les bienvenus. Chacun bénéficie de 3 séances d’entraînement gratuites pour essayer le club avant de s’inscrire.',
+        'Chaque année, nous accueillons de nouveaux membres au club. Les inscriptions ouvrent en août et la nouvelle saison commence en septembre. Chaque nouveau membre bénéficie de 3 séances d’essai gratuites pour nous découvrir.',
       signupTitle: 'Comment s’inscrire',
       signupBody:
         'Les inscriptions se font via SPOND. Créez votre compte et remplissez le formulaire d’inscription à l’aide du bouton ci-dessous.',
       signupButton: 'S’inscrire sur SPOND',
+      signupClosed:
+        'Les inscriptions pour la saison 2026/27 ouvriront en août 2026. Contactez-nous et nous vous préviendrons dès que des places seront disponibles :',
       feesTitle: 'Cotisations',
       fees: [
         { label: 'Cotisation annuelle', amount: '320 €' },
@@ -258,7 +313,6 @@ export const content: Record<Lang, PageContent> = {
         { name: 'Tigeren', desc: 'Enfants, 6–8 ans' },
         { name: 'Kobraen', desc: 'Enfants, 9–11 ans' },
         { name: 'Draachen', desc: 'Adolescents, 12 ans et plus' },
-        { name: 'Adultes', desc: 'Adultes, 15 ans et plus' },
       ],
       timetableTitle: 'Horaire hebdomadaire',
       colDay: 'Jour',
@@ -268,28 +322,32 @@ export const content: Record<Lang, PageContent> = {
         {
           day: 'Lundi',
           venue: 'Lënster Lycée',
-          sessions: 'Poomsae 18:00–19:00 · Body Combat 19:00–20:00',
+          sessions: ['18:00–19:00 Poomsae', '19:00–20:00 Body Combat'],
         },
         {
           day: 'Mardi',
           venue: 'Op Freinen',
-          sessions:
-            'Tigeren 17:00–18:00 · Kobraen 18:00–19:00 · Draachen 19:00–20:00 · Draachen extra 19:00–21:00',
+          sessions: [
+            '17:00–18:00 Tigeren',
+            '18:00–19:00 Kobraen',
+            '19:00–20:30 Draachen',
+          ],
         },
         {
           day: 'Jeudi',
           venue: 'Op Freinen',
-          sessions:
-            'Tigeren 17:00–18:00 · Kobraen 18:00–19:00 · Draachen 19:00–20:00 · Draachen extra 19:00–21:00',
+          sessions: [
+            '17:00–18:00 Tigeren',
+            '18:00–19:00 Kobraen',
+            '19:00–20:30 Draachen',
+          ],
         },
         {
           day: 'Samedi',
           venue: 'Op Freinen',
-          sessions: '10:00–12:00 (compétiteurs)',
+          sessions: ['10:00–12:00 Compétiteurs'],
         },
       ],
-      timetableNote:
-        'Le samedi matin est réservé aux compétiteurs. Nouveau au club ? Vos trois premières séances sont gratuites — venez trouver votre groupe.',
       venuesTitle: 'Où nous nous entraînons',
       venues: [
         {
@@ -297,7 +355,11 @@ export const content: Record<Lang, PageContent> = {
           desc: 'Salle d’entraînement principale (mardi, jeudi, samedi).',
           map: links.opFreinenMap,
         },
-        { name: 'Lënster Lycée', desc: 'Séances du lundi.' },
+        {
+          name: 'Lënster Lycée',
+          desc: 'Séances du lundi.',
+          map: links.lensterLyceeMap,
+        },
       ],
       mapLabel: 'Ouvrir dans Google Maps',
     },
@@ -341,17 +403,28 @@ export const content: Record<Lang, PageContent> = {
     home: {
       newsBanner:
         'Alle Gruppen sind für die Saison 2025/26 ausgebucht. Die Anmeldung für die Saison 2026/27 beginnt im August 2026.',
-      trialTitle: 'Probieren Sie es aus — 3 kostenlose Einheiten',
-      trialBody:
-        'Komm zu uns, hab Spaß, finde neue Freunde und bau deinen Stress ab! Jede(r) erhält 3 kostenlose Trainingseinheiten, um den Verein vor der Anmeldung kennenzulernen.',
+      heroStatusClosed: 'Anmeldung im August',
+      season: {
+        title: 'Dem Verein beitreten',
+        body: 'Wir sind ein freundlicher, etablierter Verein und heißen jedes Jahr neue Mitglieder willkommen. Jedes neue Mitglied erhält 3 kostenlose Schnuppertrainings, um uns kennenzulernen. Die Anmeldung beginnt im August und die neue Saison startet im September.',
+        closedNote:
+          'Die Anmeldung für die Saison 2026/27 ist noch nicht geöffnet — sie beginnt im August 2026. Melden Sie sich jederzeit bei uns, und wir informieren Sie, sobald Plätze verfügbar sind:',
+      },
+      facts: [
+        { stat: 'Seit 2000', label: 'Über 25 Jahre Taekwondo in Junglinster' },
+        { stat: 'Lizenziert', label: 'Trainer lizenziert von der Luxembourg Taekwondo Federation' },
+        { stat: '80+', label: 'Mitglieder, ab 6 Jahren bis Erwachsene' },
+      ],
     },
     join: {
       intro:
-        'Neue Mitglieder sind immer willkommen. Jede(r) erhält 3 kostenlose Trainingseinheiten, um den Verein auszuprobieren, bevor man sich anmeldet.',
+        'Jedes Jahr heißen wir neue Mitglieder im Verein willkommen. Die Anmeldung beginnt im August und die neue Saison startet im September. Jedes neue Mitglied erhält 3 kostenlose Schnuppertrainings, um uns kennenzulernen.',
       signupTitle: 'So melden Sie sich an',
       signupBody:
         'Die Anmeldung erfolgt über SPOND. Erstellen Sie Ihr Konto und füllen Sie das Anmeldeformular über die Schaltfläche unten aus.',
       signupButton: 'Auf SPOND anmelden',
+      signupClosed:
+        'Die Anmeldung für die Saison 2026/27 beginnt im August 2026. Melden Sie sich bei uns, und wir informieren Sie, sobald Plätze verfügbar sind:',
       feesTitle: 'Mitgliedsbeiträge',
       fees: [
         { label: 'Jahresbeitrag', amount: '320 €' },
@@ -380,7 +453,6 @@ export const content: Record<Lang, PageContent> = {
         { name: 'Tigeren', desc: 'Kinder, 6–8 Jahre' },
         { name: 'Kobraen', desc: 'Kinder, 9–11 Jahre' },
         { name: 'Draachen', desc: 'Jugendliche, ab 12 Jahren' },
-        { name: 'Erwachsene', desc: 'Erwachsene, ab 15 Jahren' },
       ],
       timetableTitle: 'Wochenplan',
       colDay: 'Tag',
@@ -390,28 +462,32 @@ export const content: Record<Lang, PageContent> = {
         {
           day: 'Montag',
           venue: 'Lënster Lycée',
-          sessions: 'Poomsae 18:00–19:00 · Body Combat 19:00–20:00',
+          sessions: ['18:00–19:00 Poomsae', '19:00–20:00 Body Combat'],
         },
         {
           day: 'Dienstag',
           venue: 'Op Freinen',
-          sessions:
-            'Tigeren 17:00–18:00 · Kobraen 18:00–19:00 · Draachen 19:00–20:00 · Draachen extra 19:00–21:00',
+          sessions: [
+            '17:00–18:00 Tigeren',
+            '18:00–19:00 Kobraen',
+            '19:00–20:30 Draachen',
+          ],
         },
         {
           day: 'Donnerstag',
           venue: 'Op Freinen',
-          sessions:
-            'Tigeren 17:00–18:00 · Kobraen 18:00–19:00 · Draachen 19:00–20:00 · Draachen extra 19:00–21:00',
+          sessions: [
+            '17:00–18:00 Tigeren',
+            '18:00–19:00 Kobraen',
+            '19:00–20:30 Draachen',
+          ],
         },
         {
           day: 'Samstag',
           venue: 'Op Freinen',
-          sessions: '10:00–12:00 (Wettkämpfer)',
+          sessions: ['10:00–12:00 Wettkämpfer'],
         },
       ],
-      timetableNote:
-        'Samstagvormittag ist für Wettkämpfer. Neu im Verein? Ihre ersten drei Einheiten sind kostenlos — kommen Sie vorbei und finden Sie Ihre Gruppe.',
       venuesTitle: 'Wo wir trainieren',
       venues: [
         {
@@ -419,7 +495,11 @@ export const content: Record<Lang, PageContent> = {
           desc: 'Haupttrainingshalle (Dienstag, Donnerstag, Samstag).',
           map: links.opFreinenMap,
         },
-        { name: 'Lënster Lycée', desc: 'Montagseinheiten.' },
+        {
+          name: 'Lënster Lycée',
+          desc: 'Montagseinheiten.',
+          map: links.lensterLyceeMap,
+        },
       ],
       mapLabel: 'In Google Maps öffnen',
     },

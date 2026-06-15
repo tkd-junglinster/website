@@ -56,7 +56,7 @@ function dateBadge(c: (typeof competitions)[number]): string {
                   <div class="flex-1">
                     <p class="font-semibold text-brand-black">{c.name}</p>
                     <p class="mt-0.5 text-sm text-brand-black/60">
-                      {c.city} ·{' '}
+                      {c.city && `${c.city} · `}
                       <span class="font-medium">{t(`comp.country.${c.country}`)}</span>
                     </p>
                   </div>
@@ -66,7 +66,7 @@ function dateBadge(c: (typeof competitions)[number]): string {
                     rel="noopener noreferrer"
                     class="shrink-0 rounded-md bg-brand-red px-5 py-2 text-center text-sm font-semibold text-white transition-colors hover:bg-brand-red-dark"
                   >
-                    {t('comp.register')}
+                    {c.url.includes('martial.events') ? t('comp.register') : t('comp.details')}
                   </a>
                 </li>
               ))}

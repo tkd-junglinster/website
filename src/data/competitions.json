@@ -120,5 +120,21 @@
     "end": "2026-11-29",
     "url": "https://martial.events/en/events/indoor-brussels-kyorugi-2026",
     "approved": true
+  },
+  {
+    "id": "koriyo-cup-poomsae-2026",
+    "name": "Koriyo Cup (Poomsae)",
+    "country": "LU",
+    "start": "2026-07-04",
+    "url": "https://www.luxembourgtaekwondo.lu/calendrier",
+    "approved": true
+  },
+  {
+    "id": "nowuesturneier-2026",
+    "name": "Nowuesturnéier (Combat + Poomsae)",
+    "country": "LU",
+    "start": "2026-10-24",
+    "url": "https://www.luxembourgtaekwondo.lu/calendrier",
+    "approved": true
   }
 ]

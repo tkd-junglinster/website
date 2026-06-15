@@ -40,11 +40,6 @@ export const ui = {
     'home.welcome.title': 'Notre club',
     'home.welcome.body':
       'Le TKD Junglinster est un club de Taekwondo convivial à Junglinster, ouvert aux enfants et aux adultes de tous niveaux. Le Taekwondo développe la discipline, le respect et la confiance en soi — et c’est très amusant. Venez vous entraîner avec nous.',
-    'home.facts.title': 'En bref',
-    'home.fact.1': 'Cours pour enfants et adultes',
-    'home.fact.2': "Deux lieux d'entraînement",
-    'home.fact.3': 'Taekwondo traditionnel',
-
     'page.comingSoon': 'Cette page sera bientôt disponible.',
 
     'comp.intro':
@@ -52,8 +47,9 @@ export const ui = {
     'comp.note':
       "Vérifiez toujours les détails et les délais d'inscription sur la page de l'événement.",
     'comp.source':
-      'Calendrier mis à jour automatiquement chaque semaine depuis martial.events.',
+      'Compétitions compilées depuis martial.events et la Luxembourg Taekwondo Federation, puis validées par le club avant publication.',
     'comp.register': "S'inscrire",
+    'comp.details': "Plus d'infos",
     'comp.empty': 'Aucune compétition à venir pour le moment. Revenez bientôt !',
     'comp.country.LU': 'Luxembourg',
     'comp.country.BE': 'Belgique',
@@ -99,10 +95,6 @@ export const ui = {
     'home.welcome.title': 'Our club',
     'home.welcome.body':
       'TKD Junglinster is a friendly Taekwondo club in Junglinster, welcoming children and adults of all levels. Taekwondo builds discipline, respect and confidence — and it’s a lot of fun. Come and train with us.',
-    'home.facts.title': 'At a glance',
-    'home.fact.1': 'Classes for children and adults',
-    'home.fact.2': 'Two training venues',
-    'home.fact.3': 'Traditional Taekwondo',
 
     'page.comingSoon': 'This page is coming soon.',
 
@@ -111,8 +103,9 @@ export const ui = {
     'comp.note':
       'Always check the details and registration deadlines on the event page.',
     'comp.source':
-      'Calendar updated automatically each week from martial.events.',
+      'Competitions compiled from martial.events and the Luxembourg Taekwondo Federation, then reviewed by the club before publishing.',
     'comp.register': 'Register',
+    'comp.details': 'More info',
     'comp.empty': 'No upcoming competitions right now. Check back soon!',
     'comp.country.LU': 'Luxembourg',
     'comp.country.BE': 'Belgium',
@@ -158,10 +151,6 @@ export const ui = {
     'home.welcome.title': 'Unser Verein',
     'home.welcome.body':
       'Der TKD Junglinster ist ein freundlicher Taekwondo-Verein in Junglinster, der Kinder und Erwachsene aller Niveaus willkommen heißt. Taekwondo fördert Disziplin, Respekt und Selbstvertrauen — und macht großen Spaß. Trainieren Sie mit uns.',
-    'home.facts.title': 'Auf einen Blick',
-    'home.fact.1': 'Kurse für Kinder und Erwachsene',
-    'home.fact.2': 'Zwei Trainingsorte',
-    'home.fact.3': 'Traditionelles Taekwondo',
 
     'page.comingSoon': 'Diese Seite ist bald verfügbar.',
 
@@ -170,8 +159,9 @@ export const ui = {
     'comp.note':
       'Bitte prüfen Sie die Details und Anmeldefristen immer auf der Veranstaltungsseite.',
     'comp.source':
-      'Kalender wird wöchentlich automatisch von martial.events aktualisiert.',
+      'Wettkämpfe zusammengestellt aus martial.events und der Luxembourg Taekwondo Federation, dann vom Verein vor der Veröffentlichung geprüft.',
     'comp.register': 'Anmelden',
+    'comp.details': 'Mehr Infos',
     'comp.empty':
       'Derzeit keine bevorstehenden Wettkämpfe. Schauen Sie bald wieder vorbei!',
     'comp.country.LU': 'Luxemburg',

@@ -1,11 +1,10 @@
 ---
 import { getLangFromUrl, useTranslations, localePath } from '../i18n/utils';
-import { content } from '../i18n/content';
+import { content, links, registrationOpen } from '../i18n/content';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 const joinHref = localePath(lang, 'join');
-const facts = [t('home.fact.1'), t('home.fact.2'), t('home.fact.3')];
 const home = content[lang].home;
 ---
 
@@ -36,12 +35,20 @@ const home = content[lang].home;
     <p class="mt-6 max-w-xl text-lg text-white/90 md:text-xl">
       {t('home.hero.subtitle')}
     </p>
-    <a
-      href={joinHref}
-      class="mt-8 inline-block rounded-md bg-brand-red px-8 py-3 font-semibold text-white transition-colors hover:bg-brand-red-dark"
-    >
-      {t('home.cta')}
-    </a>
+    {
+      registrationOpen ? (
+        <a
+          href={joinHref}
+          class="mt-8 inline-block rounded-md bg-brand-red px-8 py-3 font-semibold text-white transition-colors hover:bg-brand-red-dark"
+        >
+          {t('home.cta')}
+        </a>
+      ) : (
+        <span class="mt-8 inline-block rounded-md bg-white/15 px-5 py-2 text-sm font-medium text-white/85 ring-1 ring-white/25">
+          {home.heroStatusClosed}
+        </span>
+      )
+    }
   </div>
 </section>
 
@@ -53,20 +60,29 @@ const home = content[lang].home;
   <p class="mt-6 max-w-3xl text-lg text-brand-black/80">{t('home.welcome.body')}</p>
 </section>
 
-<!-- Free trial -->
+<!-- Join the club / season status -->
 <section class="bg-brand-black/[0.03]">
   <div class="mx-auto max-w-6xl px-4 py-14">
-    <div class="flex flex-col items-start gap-4 rounded-lg border-l-4 border-brand-red bg-white p-6 shadow-sm md:flex-row md:items-center md:justify-between md:p-8">
-      <div>
-        <h2 class="text-2xl font-bold md:text-3xl">{home.trialTitle}</h2>
-        <p class="mt-3 max-w-2xl text-brand-black/80">{home.trialBody}</p>
-      </div>
-      <a
-        href={joinHref}
-        class="shrink-0 rounded-md bg-brand-red px-8 py-3 font-semibold text-white transition-colors hover:bg-brand-red-dark"
-      >
-        {t('home.cta')}
-      </a>
+    <div class="rounded-lg border-l-4 border-brand-red bg-white p-6 shadow-sm md:p-8">
+      <h2 class="text-2xl font-bold md:text-3xl">{home.season.title}</h2>
+      <p class="mt-3 max-w-2xl text-brand-black/80">{home.season.body}</p>
+      {
+        registrationOpen ? (
+          <a
+            href={joinHref}
+            class="mt-5 inline-block rounded-md bg-brand-red px-8 py-3 font-semibold text-white transition-colors hover:bg-brand-red-dark"
+          >
+            {t('home.cta')}
+          </a>
+        ) : (
+          <p class="mt-4 max-w-2xl text-sm text-brand-black/70">
+            {home.season.closedNote}{' '}
+            <a href={`mailto:${links.email}`} class="font-semibold text-brand-red hover:underline">
+              {links.email}
+            </a>
+          </p>
+        )
+      }
     </div>
   </div>
 </section>
@@ -75,24 +91,12 @@ const home = content[lang].home;
 <section class="bg-brand-black text-white">
   <div class="mx-auto grid max-w-6xl gap-8 px-4 py-16 md:grid-cols-3">
     {
-      facts.map((fact) => (
+      home.facts.map((f) => (
         <div class="border-t-4 border-brand-red pt-4">
-          <p class="text-lg font-medium">{fact}</p>
+          <p class="text-3xl font-extrabold text-brand-red">{f.stat}</p>
+          <p class="mt-2 text-lg font-medium text-white/90">{f.label}</p>
         </div>
       ))
     }
-  </div>
-</section>
-
-<!-- Call to action band -->
-<section class="bg-brand-red text-white">
-  <div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-4 py-12 md:flex-row">
-    <p class="text-xl font-semibold">{t('home.cta.band')}</p>
-    <a
-      href={joinHref}
-      class="rounded-md bg-white px-8 py-3 font-semibold text-brand-red transition-colors hover:bg-white/90"
-    >
-      {t('home.cta')}
-    </a>
   </div>
 </section>
