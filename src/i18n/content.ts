@@ -91,6 +91,10 @@ interface PageContent {
     medicalLink: string;
     ageTitle: string;
     ageBody: string;
+    rulesTitle: string;
+    rulesBody: string;
+    rulesLink: string;
+    photosLink: string;
     liability: string;
     contactTitle: string;
     contactBody: string;
@@ -117,6 +121,12 @@ interface PageContent {
     rulesTitle: string;
     rulesIntro: string;
     rules: string[];
+    photosTitle: string;
+    photosIntro: string;
+    /** What consenting to photos actually covers — shown as a list. */
+    photos: string[];
+    /** Withdrawal note; the club email address is appended automatically. */
+    photosNote: string;
   };
 }
 
@@ -161,6 +171,11 @@ export const content: Record<Lang, PageContent> = {
       ageTitle: 'Minimum age',
       ageBody:
         'The minimum age is 5. In exceptional cases we accept 4-year-olds who follow instructions well and are mature for their age, with board approval.',
+      rulesTitle: 'Club rules and photos',
+      rulesBody:
+        'Before you sign up, please read our dojang etiquette — the few simple rules every member follows — and how we use photos of our members. The SPOND form asks you to give or refuse photo consent.',
+      rulesLink: 'Club rules',
+      photosLink: 'How we use photos',
       liability: 'All participants take part in our sessions at their own risk.',
       contactTitle: 'Questions?',
       contactBody: 'Get in touch with the board at',
@@ -256,6 +271,16 @@ export const content: Record<Lang, PageContent> = {
         'Wear a clean, pressed dobok (uniform).',
         'Train barefoot or in taekwondo shoes — no ordinary sneakers, they cause injuries.',
       ],
+      photosTitle: 'Photos and video',
+      photosIntro:
+        'We take photos and short videos at training, gradings, competitions, camps and club events. When you sign up on SPOND you are asked whether you consent to us using them. This is what that covers:',
+      photos: [
+        'We publish them on this website and on the club’s Facebook and Instagram pages, to show what the club does and to celebrate our members’ achievements.',
+        'Occasionally the commune of Junglinster may use a club photo in its own publications.',
+        'For members under 18, a parent or guardian gives consent on their behalf.',
+      ],
+      photosNote:
+        'Consent is optional. At any time you can ask us to remove any photos of you that we have already published. Write to',
     },
   },
 
@@ -300,6 +325,11 @@ export const content: Record<Lang, PageContent> = {
       ageTitle: 'Âge minimum',
       ageBody:
         'L’âge minimum est de 5 ans. À titre exceptionnel, nous acceptons les enfants de 4 ans qui suivent bien les consignes et sont mûrs pour leur âge, avec l’accord du comité.',
+      rulesTitle: 'Règles du club et photos',
+      rulesBody:
+        'Avant de vous inscrire, merci de lire notre étiquette du dojang — les quelques règles simples que chaque membre respecte — ainsi que notre utilisation des photos de nos membres. Le formulaire SPOND vous demandera d’accepter ou de refuser le consentement photo.',
+      rulesLink: 'Règles du club',
+      photosLink: 'Notre utilisation des photos',
       liability:
         'Tous les participants prennent part à nos séances à leurs propres risques.',
       contactTitle: 'Des questions ?',
@@ -396,6 +426,16 @@ export const content: Record<Lang, PageContent> = {
         'Portez un dobok (tenue) propre et repassé.',
         'Entraînez-vous pieds nus ou en chaussures de taekwondo — pas de baskets ordinaires, elles provoquent des blessures.',
       ],
+      photosTitle: 'Photos et vidéos',
+      photosIntro:
+        'Nous prenons des photos et de courtes vidéos lors des entraînements, des passages de grade, des compétitions, des stages et des événements du club. Lors de l’inscription sur SPOND, il vous est demandé si vous consentez à leur utilisation. Voici ce que cela couvre :',
+      photos: [
+        'Nous les publions sur ce site ainsi que sur les pages Facebook et Instagram du club, pour montrer la vie du club et mettre en valeur les réussites de nos membres.',
+        'Occasionnellement, la commune de Junglinster peut utiliser une photo du club dans ses propres publications.',
+        'Pour les membres de moins de 18 ans, le consentement est donné par un parent ou un tuteur.',
+      ],
+      photosNote:
+        'Le consentement est facultatif. À tout moment, vous pouvez nous demander de retirer les photos de vous que nous avons déjà publiées. Écrivez à',
     },
   },
 
@@ -440,6 +480,11 @@ export const content: Record<Lang, PageContent> = {
       ageTitle: 'Mindestalter',
       ageBody:
         'Das Mindestalter beträgt 5 Jahre. In Ausnahmefällen nehmen wir Kinder mit 4 Jahren auf, die Anweisungen gut befolgen und für ihr Alter reif sind, mit Zustimmung des Vorstands.',
+      rulesTitle: 'Vereinsregeln und Fotos',
+      rulesBody:
+        'Bitte lesen Sie vor der Anmeldung unsere Dojang-Etikette — die wenigen einfachen Regeln, an die sich jedes Mitglied hält — und wie wir Fotos unserer Mitglieder verwenden. Im SPOND-Formular werden Sie gebeten, die Fotoeinwilligung zu erteilen oder abzulehnen.',
+      rulesLink: 'Vereinsregeln',
+      photosLink: 'Wie wir Fotos verwenden',
       liability:
         'Alle Teilnehmer nehmen auf eigene Gefahr an unseren Einheiten teil.',
       contactTitle: 'Fragen?',
@@ -536,6 +581,16 @@ export const content: Record<Lang, PageContent> = {
         'Tragen Sie einen sauberen, gebügelten Dobok (Anzug).',
         'Trainieren Sie barfuß oder in Taekwondo-Schuhen — keine normalen Turnschuhe, sie führen zu Verletzungen.',
       ],
+      photosTitle: 'Fotos und Videos',
+      photosIntro:
+        'Wir machen Fotos und kurze Videos beim Training, bei Gürtelprüfungen, Wettkämpfen, Trainingslagern und Vereinsveranstaltungen. Bei der Anmeldung über SPOND werden Sie gefragt, ob Sie deren Verwendung zustimmen. Das umfasst Folgendes:',
+      photos: [
+        'Wir veröffentlichen sie auf dieser Website sowie auf den Facebook- und Instagram-Seiten des Vereins, um das Vereinsleben zu zeigen und die Erfolge unserer Mitglieder zu würdigen.',
+        'Gelegentlich kann die Gemeinde Junglinster ein Vereinsfoto in ihren eigenen Publikationen verwenden.',
+        'Für Mitglieder unter 18 Jahren erteilt ein Elternteil oder Erziehungsberechtigter die Einwilligung.',
+      ],
+      photosNote:
+        'Die Einwilligung ist freiwillig. Sie können uns jederzeit bitten, bereits veröffentlichte Fotos von Ihnen zu entfernen. Schreiben Sie an',
     },
   },
 };

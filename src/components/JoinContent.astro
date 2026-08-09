@@ -1,10 +1,11 @@
 ---
-import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import { getLangFromUrl, useTranslations, localePath } from '../i18n/utils';
 import { content, links, registrationOpen } from '../i18n/content';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 const c = content[lang].join;
+const aboutPath = localePath(lang, 'about');
 ---
 
 <section class="mx-auto max-w-6xl px-4 py-16">
@@ -38,6 +39,22 @@ const c = content[lang].join;
         </p>
       )
     }
+  </div>
+
+  <!-- Club rules + photo consent (details live on the About page) -->
+  <div class="mt-12">
+    <h2 class="border-l-4 border-brand-red pl-4 text-xl font-bold md:text-2xl">
+      {c.rulesTitle}
+    </h2>
+    <p class="mt-4 max-w-2xl text-brand-black/80">{c.rulesBody}</p>
+    <div class="mt-4 flex flex-wrap gap-x-8 gap-y-2">
+      <a href={`${aboutPath}#rules`} class="font-semibold text-brand-red hover:underline">
+        {c.rulesLink} →
+      </a>
+      <a href={`${aboutPath}#photos`} class="font-semibold text-brand-red hover:underline">
+        {c.photosLink} →
+      </a>
+    </div>
   </div>
 
   <!-- Fees -->

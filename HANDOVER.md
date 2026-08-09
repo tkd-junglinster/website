@@ -104,10 +104,30 @@ are added:
 - **Calendar** ✅ (built) — the club's own annual calendar (camps, gradings,
   local festivals); renamed from "Events", lives at `/calendar/`
 - **Competitions** ✅ (built) — automatically updated calendar (see below)
-- **About** ✅ (built) — what taekwondo is, the five virtues, dojang etiquette
-  (still to add: coach names/grades)
+- **About** ✅ (built) — what taekwondo is, the five virtues, dojang etiquette,
+  photo use (still to add: coach names/grades)
 - **News & gallery** — simple posts with a photo and text (hidden from the nav
   for now; the `/news` pages exist but aren't linked)
+
+### Club rules and photo consent
+
+New members are pointed at two things before they sign up on SPOND. Both are
+sections of the **About** page, and the **Join us** page links straight to them:
+
+- **Club rules** — the dojang etiquette list, at `/about#rules`
+- **Photos and video** — what members are consenting to when they tick the photo
+  consent box on the SPOND form, at `/about#photos`
+
+The wording for both lives in `src/i18n/content.ts` under `about.rules`,
+`about.photos` and `join.rulesBody`, in all three languages.
+
+**Keep the photo section truthful.** It currently says photos are published on
+this website and the club's Facebook and Instagram pages, that the commune may
+occasionally reuse a club photo, that a parent or guardian consents for members
+under 18, and that anyone can ask for a published photo to be removed by
+emailing the club. If the club starts using a new channel (for example TikTok,
+or sending photos to the press), add it to that list first — members consented
+to what is written there, nothing wider.
 
 ### Competitions calendar (display built; automation planned)
 
