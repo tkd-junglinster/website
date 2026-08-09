@@ -147,7 +147,7 @@ export const content: Record<Lang, PageContent> = {
       heroStatusClosed: 'Sign-ups open in August',
       season: {
         title: 'Join the club',
-        body: 'We’re a friendly, established club and we welcome new members every year. Sign-ups for the 2026/27 season are open now for our Tigeren group (children aged 6–8), and places in our other groups will be announced soon. The season starts in September, and everyone who joins gets 3 free trial sessions to try us out.',
+        body: 'We’re a friendly, established club and we welcome new members every year. Sign-ups for the 2026/27 season are open now for our Tigeren group (children aged 6–8), and places in our other groups will be announced soon. The season starts on 3 September, and everyone who joins gets 3 free trial sessions to try us out.',
         closedNote:
           'Registrations for the 2026/27 season aren’t open yet — they open in August 2026. Get in touch any time and we’ll let you know when places are available:',
       },
@@ -159,7 +159,7 @@ export const content: Record<Lang, PageContent> = {
     },
     join: {
       intro:
-        'Each year we welcome new members to the club. Sign-ups for the 2026/27 season are open now for our Tigeren group (children aged 6–8), and places in our other groups will be announced soon. The season starts in September, and everyone who joins gets 3 free trial sessions to try us out.',
+        'Each year we welcome new members to the club. Sign-ups for the 2026/27 season are open now for our Tigeren group (children aged 6–8), and places in our other groups will be announced soon. The season starts on 3 September, and everyone who joins gets 3 free trial sessions to try us out.',
       signupTitle: 'How to sign up',
       signupBody:
         'Registration is handled through SPOND. Create your account and complete the sign-up form using the button below.',
@@ -179,7 +179,7 @@ export const content: Record<Lang, PageContent> = {
       medicalLink: 'Book a medical appointment',
       ageTitle: 'Minimum age',
       ageBody:
-        'The minimum age is 5. In exceptional cases we accept 4-year-olds who follow instructions well and are mature for their age, with board approval.',
+        'The minimum age is 6.',
       rulesTitle: 'Club rules and photos',
       rulesBody:
         'Before you sign up, please read our dojang etiquette — the few simple rules every member follows — and how we use photos of our members. The SPOND form asks you to give or refuse photo consent.',
@@ -300,7 +300,7 @@ export const content: Record<Lang, PageContent> = {
       heroStatusClosed: 'Inscriptions en août',
       season: {
         title: 'Rejoindre le club',
-        body: 'Nous sommes un club convivial et établi, et nous accueillons de nouveaux membres chaque année. Les inscriptions pour la saison 2026/27 sont ouvertes pour notre groupe Tigeren (enfants de 6 à 8 ans), et les places dans nos autres groupes seront annoncées prochainement. La saison commence en septembre et chaque nouveau membre bénéficie de 3 séances d’essai gratuites pour nous découvrir.',
+        body: 'Nous sommes un club convivial et établi, et nous accueillons de nouveaux membres chaque année. Les inscriptions pour la saison 2026/27 sont ouvertes pour notre groupe Tigeren (enfants de 6 à 8 ans), et les places dans nos autres groupes seront annoncées prochainement. La saison commence le 3 septembre et chaque nouveau membre bénéficie de 3 séances d’essai gratuites pour nous découvrir.',
         closedNote:
           'Les inscriptions pour la saison 2026/27 ne sont pas encore ouvertes — elles ouvriront en août 2026. Contactez-nous à tout moment et nous vous préviendrons dès que des places seront disponibles :',
       },
@@ -312,7 +312,7 @@ export const content: Record<Lang, PageContent> = {
     },
     join: {
       intro:
-        'Chaque année, nous accueillons de nouveaux membres au club. Les inscriptions pour la saison 2026/27 sont ouvertes pour notre groupe Tigeren (enfants de 6 à 8 ans), et les places dans nos autres groupes seront annoncées prochainement. La saison commence en septembre et chaque nouveau membre bénéficie de 3 séances d’essai gratuites pour nous découvrir.',
+        'Chaque année, nous accueillons de nouveaux membres au club. Les inscriptions pour la saison 2026/27 sont ouvertes pour notre groupe Tigeren (enfants de 6 à 8 ans), et les places dans nos autres groupes seront annoncées prochainement. La saison commence le 3 septembre et chaque nouveau membre bénéficie de 3 séances d’essai gratuites pour nous découvrir.',
       signupTitle: 'Comment s’inscrire',
       signupBody:
         'Les inscriptions se font via SPOND. Créez votre compte et remplissez le formulaire d’inscription à l’aide du bouton ci-dessous.',
@@ -333,7 +333,7 @@ export const content: Record<Lang, PageContent> = {
       medicalLink: 'Prendre un rendez-vous médical',
       ageTitle: 'Âge minimum',
       ageBody:
-        'L’âge minimum est de 5 ans. À titre exceptionnel, nous acceptons les enfants de 4 ans qui suivent bien les consignes et sont mûrs pour leur âge, avec l’accord du comité.',
+        'L’âge minimum est de 6 ans.',
       rulesTitle: 'Règles du club et photos',
       rulesBody:
         'Avant de vous inscrire, merci de lire notre étiquette du dojang — les quelques règles simples que chaque membre respecte — ainsi que notre utilisation des photos de nos membres. Le formulaire SPOND vous demandera d’accepter ou de refuser le consentement photo.',
@@ -455,7 +455,7 @@ export const content: Record<Lang, PageContent> = {
       heroStatusClosed: 'Anmeldung im August',
       season: {
         title: 'Dem Verein beitreten',
-        body: 'Wir sind ein freundlicher, etablierter Verein und heißen jedes Jahr neue Mitglieder willkommen. Die Anmeldung für die Saison 2026/27 ist für unsere Gruppe Tigeren (Kinder von 6 bis 8 Jahren) geöffnet, und Plätze in unseren anderen Gruppen geben wir in Kürze bekannt. Die Saison beginnt im September, und jedes neue Mitglied erhält 3 kostenlose Schnuppertrainings, um uns kennenzulernen.',
+        body: 'Wir sind ein freundlicher, etablierter Verein und heißen jedes Jahr neue Mitglieder willkommen. Die Anmeldung für die Saison 2026/27 ist für unsere Gruppe Tigeren (Kinder von 6 bis 8 Jahren) geöffnet, und Plätze in unseren anderen Gruppen geben wir in Kürze bekannt. Die Saison beginnt am 3. September, und jedes neue Mitglied erhält 3 kostenlose Schnuppertrainings, um uns kennenzulernen.',
         closedNote:
           'Die Anmeldung für die Saison 2026/27 ist noch nicht geöffnet — sie beginnt im August 2026. Melden Sie sich jederzeit bei uns, und wir informieren Sie, sobald Plätze verfügbar sind:',
       },
@@ -467,7 +467,7 @@ export const content: Record<Lang, PageContent> = {
     },
     join: {
       intro:
-        'Jedes Jahr heißen wir neue Mitglieder im Verein willkommen. Die Anmeldung für die Saison 2026/27 ist für unsere Gruppe Tigeren (Kinder von 6 bis 8 Jahren) geöffnet, und Plätze in unseren anderen Gruppen geben wir in Kürze bekannt. Die Saison beginnt im September, und jedes neue Mitglied erhält 3 kostenlose Schnuppertrainings, um uns kennenzulernen.',
+        'Jedes Jahr heißen wir neue Mitglieder im Verein willkommen. Die Anmeldung für die Saison 2026/27 ist für unsere Gruppe Tigeren (Kinder von 6 bis 8 Jahren) geöffnet, und Plätze in unseren anderen Gruppen geben wir in Kürze bekannt. Die Saison beginnt am 3. September, und jedes neue Mitglied erhält 3 kostenlose Schnuppertrainings, um uns kennenzulernen.',
       signupTitle: 'So melden Sie sich an',
       signupBody:
         'Die Anmeldung erfolgt über SPOND. Erstellen Sie Ihr Konto und füllen Sie das Anmeldeformular über die Schaltfläche unten aus.',
@@ -488,7 +488,7 @@ export const content: Record<Lang, PageContent> = {
       medicalLink: 'Einen medizinischen Termin buchen',
       ageTitle: 'Mindestalter',
       ageBody:
-        'Das Mindestalter beträgt 5 Jahre. In Ausnahmefällen nehmen wir Kinder mit 4 Jahren auf, die Anweisungen gut befolgen und für ihr Alter reif sind, mit Zustimmung des Vorstands.',
+        'Das Mindestalter beträgt 6 Jahre.',
       rulesTitle: 'Vereinsregeln und Fotos',
       rulesBody:
         'Bitte lesen Sie vor der Anmeldung unsere Dojang-Etikette — die wenigen einfachen Regeln, an die sich jedes Mitglied hält — und wie wir Fotos unserer Mitglieder verwenden. Im SPOND-Formular werden Sie gebeten, die Fotoeinwilligung zu erteilen oder abzulehnen.',
