@@ -168,9 +168,8 @@ export const content: Record<Lang, PageContent> = {
         'Registrations for the 2026/27 season open in August 2026. Get in touch and we’ll let you know as soon as places are available:',
       feesTitle: 'Membership fees',
       fees: [
-        { label: 'Annual membership', amount: '€320' },
-        { label: 'LTF license incl. insurance (2025)', amount: '€30' },
-        { label: 'Account set-up fee', amount: '€8' },
+        { label: 'Annual membership (school year)', amount: '€320' },
+        { label: 'LTF license incl. insurance (each calendar year)', amount: '€30' },
       ],
       feesNote: 'The annual fee and the license fee cannot be reimbursed.',
       medicalTitle: 'Sports medical check',
@@ -321,9 +320,8 @@ export const content: Record<Lang, PageContent> = {
         'Les inscriptions pour la saison 2026/27 ouvriront en août 2026. Contactez-nous et nous vous préviendrons dès que des places seront disponibles :',
       feesTitle: 'Cotisations',
       fees: [
-        { label: 'Cotisation annuelle', amount: '320 €' },
-        { label: 'Licence LTF avec assurance (2025)', amount: '30 €' },
-        { label: 'Frais d’ouverture de compte', amount: '8 €' },
+        { label: 'Cotisation annuelle (année scolaire)', amount: '320 €' },
+        { label: 'Licence LTF avec assurance (chaque année civile)', amount: '30 €' },
       ],
       feesNote:
         'La cotisation annuelle ainsi que la licence ne sont pas remboursables.',
@@ -476,9 +474,8 @@ export const content: Record<Lang, PageContent> = {
         'Die Anmeldung für die Saison 2026/27 beginnt im August 2026. Melden Sie sich bei uns, und wir informieren Sie, sobald Plätze verfügbar sind:',
       feesTitle: 'Mitgliedsbeiträge',
       fees: [
-        { label: 'Jahresbeitrag', amount: '320 €' },
-        { label: 'LTF-Lizenz inkl. Versicherung (2025)', amount: '30 €' },
-        { label: 'Kontoeinrichtungsgebühr', amount: '8 €' },
+        { label: 'Jahresbeitrag (Schuljahr)', amount: '320 €' },
+        { label: 'LTF-Lizenz inkl. Versicherung (jedes Kalenderjahr)', amount: '30 €' },
       ],
       feesNote:
         'Der Jahresbeitrag sowie die Lizenzgebühr können nicht erstattet werden.',
