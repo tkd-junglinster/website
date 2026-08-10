@@ -1,6 +1,6 @@
 ---
 import { getLangFromUrl, useTranslations } from '../i18n/utils';
-import { content, links } from '../i18n/content';
+import { content } from '../i18n/content';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -73,10 +73,4 @@ const c = content[lang].about;
       ))
     }
   </ul>
-  <p class="mt-5 max-w-2xl rounded-lg bg-brand-black/[0.03] p-5 text-sm text-brand-black/80">
-    {c.photosNote}{' '}
-    <a href={`mailto:${links.email}`} class="font-semibold text-brand-red hover:underline">
-      {links.email}
-    </a>.
-  </p>
 </section>

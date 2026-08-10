@@ -134,8 +134,6 @@ interface PageContent {
     photosIntro: string;
     /** What consenting to photos actually covers — shown as a list. */
     photos: string[];
-    /** Withdrawal note; the club email address is appended automatically. */
-    photosNote: string;
   };
 }
 
@@ -287,8 +285,6 @@ export const content: Record<Lang, PageContent> = {
         'Occasionally the commune of Junglinster may use a club photo in its own publications.',
         'For members under 18, a parent or guardian gives consent on their behalf.',
       ],
-      photosNote:
-        'Consent is optional. At any time you can ask us to remove any photos of you that we have already published. Write to',
     },
   },
 
@@ -441,8 +437,6 @@ export const content: Record<Lang, PageContent> = {
         'Occasionnellement, la commune de Junglinster peut utiliser une photo du club dans ses propres publications.',
         'Pour les membres de moins de 18 ans, le consentement est donné par un parent ou un tuteur.',
       ],
-      photosNote:
-        'Le consentement est facultatif. À tout moment, vous pouvez nous demander de retirer les photos de vous que nous avons déjà publiées. Écrivez à',
     },
   },
 
@@ -595,8 +589,6 @@ export const content: Record<Lang, PageContent> = {
         'Gelegentlich kann die Gemeinde Junglinster ein Vereinsfoto in ihren eigenen Publikationen verwenden.',
         'Für Mitglieder unter 18 Jahren erteilt ein Elternteil oder Erziehungsberechtigter die Einwilligung.',
       ],
-      photosNote:
-        'Die Einwilligung ist freiwillig. Sie können uns jederzeit bitten, bereits veröffentlichte Fotos von Ihnen zu entfernen. Schreiben Sie an',
     },
   },
 };
